@@ -63,9 +63,14 @@ html_theme_path = ['../src/themes']
 html_static_path = ['_static']
 html_css_files = ["default.css"]
 
-# html_theme_options = {"navigation_depth": 2}
 html_logo = '_static/images/logo.jpg'
 # The name of an image file (within the static path) to use as favicon of the
 # docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32
 # pixels large.
 html_favicon = '_static/images/favicon.jpg'
+
+html_last_updated_fmt = '%Y-%m-%d, %H:%M:%S'
+
+html_theme_options = {
+  "footer_items": ["copyright", "sphinx-version", "last-updated"],
+}
