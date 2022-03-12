@@ -3,7 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to xyzstyle's documentation!
+xyzstyle 主题
 ====================================
 
 .. toctree::
@@ -12,7 +12,7 @@ Welcome to xyzstyle's documentation!
 
 
 
-Indices and tables
+目录和索引
 ==================
 
 * :ref:`genindex`
