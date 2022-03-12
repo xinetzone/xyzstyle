@@ -3,8 +3,9 @@ from _docs import docs, write
 
 
 @task
-def init(ctx):
-    ctx.run('pip install .[doc] --use-feature=in-tree-build')
+def install(ctx, name='doc'):
+    # --use-feature=in-tree-build
+    ctx.run(f'pip install .[{name}] ')
 
 
-ns = Collection(docs, write, init)
+ns = Collection(docs, write, install)

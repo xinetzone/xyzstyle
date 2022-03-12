@@ -4,21 +4,65 @@ requires = ["flit_core >=3.4,<4"]
 
 [project]
 authors = [{name = "xinetzone", email = "735613050@qq.com"}]
-classifiers = ["License :: OSI Approved :: Apache Software License"]
 dynamic = ["version", "description"]
 license = {file = "LICENSE"}
-name = "src"
+name = "xyzstyle"
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = ">=3.8"
+
+dependencies = [
+  "sphinx>=4.4,<5",
+  "pydata_sphinx_theme",
+]
+
+maintainers = [
+  {name = "xinetzone", email = "735613050@qq.com"},
+]
+
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Programming Language :: Python :: 3",
+  "Framework :: Sphinx",
+  "Framework :: Sphinx :: Theme",
+  "License :: OSI Approved :: Apache Software License",
+  "Operating System :: OS Independent",
+]
 
 [project.urls]
 Home = "https://github.com/xinetzone/xyzstyle"
 
 [project.optional-dependencies]
 doc = [
-  "sphinx>=4.4",
-  "pydata_sphinx_theme"
+  "myst-parser",
+  "pandas",
+  "pytest",
+  "pytest-regressions",
+  "sphinxext-rediraffe",
+  "sphinx-sitemap", # For demo examples
+  "jupyter_sphinx",
+  "plotly",
+  "numpy",
+  "xarray",
+  "invoke",
 ]
+
+coverage = [
+  "pytest-cov",
+  "codecov",
+  "xyzstyle[test]",
+]
+dev = [
+  "pyyaml",
+  "pre-commit",
+  "xyzstyle[coverage]",
+]
+test = [
+  "pytest",
+  "xyzstyle[doc]",
+]
+
+[project.entry-points]
+"sphinx.html_themes" = {xyzstyle = "xyzstyle"}
 
 [tool.flit.sdist]
 # include = ["docs/"]
