@@ -72,5 +72,5 @@ html_favicon = '_static/images/favicon.jpg'
 html_last_updated_fmt = '%Y-%m-%d, %H:%M:%S'
 
 html_theme_options = {
-  "footer_items": ["copyright", "sphinx-version", "last-updated"],
+    "footer_items": ["copyright", "last-updated", "sphinx-version", ],
 }
