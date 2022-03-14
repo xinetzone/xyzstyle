@@ -4,6 +4,7 @@
 ```{toctree}
 :maxdepth: 2
 
+config
 ```
 
 ## 目录和索引

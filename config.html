@@ -1,0 +1,289 @@
+
+<!DOCTYPE html>
+
+<html lang="zh_CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Sphinx 配置 &#8212; xyzstyle 0.0.1rc1 文档</title>
+    
+    <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  
+    
+    <link rel="stylesheet"
+      href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+    <link rel="preload" as="font" type="font/woff2" crossorigin
+      href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+    <link rel="preload" as="font" type="font/woff2" crossorigin
+      href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+    
+      
+  
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/default.css" />
+    
+    <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/translations.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.jpg"/>
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" />
+    <link rel="prev" title="xyzstyle" href="index.html" />
+    <link rel="stylesheet" href="_static/css/default.css"/>
+    <link rel="stylesheet" href="_static/css/custom.css"/>
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="index.html">
+  <img src="_static/logo.jpg" class="logo" alt="logo">
+</a>
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 current active nav-item">
+ <a class="current reference internal nav-link" href="#">
+  Sphinx 配置
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar">
+              <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    
+  </div>
+</nav>
+              </div>
+              <div class="sidebar-end-items">
+              </div>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#path">
+   Path 设置
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   项目信息
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   通用配置
+  </a>
+ </li>
+</ul>
+
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <section id="sphinx">
+<h1>Sphinx 配置<a class="headerlink" href="#sphinx" title="永久链接至标题">¶</a></h1>
+<p>参考：<a class="reference external" href="https://daobook.github.io/sphinx/usage/configuration.html" title="(在 Sphinx v4.4.0)"><span>配置</span></a></p>
+<p>本篇将列出一些常用的配置。</p>
+<section id="path">
+<h2>Path 设置<a class="headerlink" href="#path" title="永久链接至标题">¶</a></h2>
+<p>如果 <a class="reference external" href="https://daobook.github.io/sphinx/usage/configuration.html#confval-extensions" title="(在 Sphinx v4.4.0)"><code class="xref std std-confval docutils literal notranslate"><span class="pre">extensions</span></code></a> （或要用 <a class="reference external" href="https://daobook.github.io/sphinx/usage/extensions/autodoc.html#module-sphinx.ext.autodoc" title="(在 Sphinx v4.4.0)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sphinx.ext.autodoc</span></code></a> 文档的模块）在另一个目录中，将这些目录添加到 <a class="reference external" href="https://daobook.github.io/cpython/library/sys.html#sys.path" title="(在 Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">sys.path</span></code></a>。如果目录是相对于文档根目录的，那么使用 <a class="reference external" href="https://daobook.github.io/cpython/library/pathlib.html#pathlib.Path.absolute" title="(在 Python v3.11)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pathlib.Path.absolute()</span></code></a> 将其设置为绝对目录，如下面所示：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+
+<span class="n">ROOT</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">absolute</span><span class="p">()</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">ROOT</span><span class="p">)])</span>
+</pre></div>
+</div>
+</section>
+<section id="id1">
+<h2>项目信息<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p>项目信息的一般信息：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">project</span> <span class="o">=</span> <span class="s1">&#39;xyz&#39;</span> <span class="c1"># 记录的项目名称</span>
+<span class="n">copyright</span> <span class="o">=</span> <span class="s1">&#39;2022, xinetzone&#39;</span> <span class="c1"># 版权声明。</span>
+<span class="n">author</span> <span class="o">=</span> <span class="s1">&#39;xinetzone&#39;</span>  <span class="c1"># 该文档的作者姓名。默认值是 ``&#39;unknown&#39;``。</span>
+</pre></div>
+</div>
+<p>项目的主版本使用 <code class="docutils literal notranslate"><span class="pre">version</span></code>，用来替代 <code class="docutils literal notranslate"><span class="pre">|version|</span></code>。例如，对于 Python 文档，这可能是 <code class="docutils literal notranslate"><span class="pre">3.10</span></code> 之类的。<code class="docutils literal notranslate"><span class="pre">release</span></code> 表示项目的完整版本 <code class="docutils literal notranslate"><span class="pre">alpha/beta/rc</span> <span class="pre">tags</span></code>，用来替代 <code class="docutils literal notranslate"><span class="pre">|release|</span></code>，例如在 HTML 模板中。例如，对于 Python 文档，这可能是 <code class="docutils literal notranslate"><span class="pre">2.6.0rc1</span></code>。示例如下：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">version</span> <span class="o">=</span> <span class="s1">&#39;0.0.1&#39;</span>
+<span class="n">release</span> <span class="o">=</span> <span class="s1">&#39;0.0.1rc1&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="id2">
+<h2>通用配置<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p><a class="reference external" href="https://daobook.github.io/sphinx/usage/configuration.html#confval-extensions" title="(在 Sphinx v4.4.0)"><code class="xref std std-confval docutils literal notranslate"><span class="pre">extensions</span></code></a> 字符串列表</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 在这里添加任何 Sphinx 插件模块名，作为字符串。</span>
+<span class="c1"># 它们可以是 Sphinx 自带的插件（名为 ``sphinx.ext.*``），也可以是你自定义的插件。</span>
+<span class="c1"># 配置文件（``conf.py``）本身可以是插件；为此，你只需要在其中提供 {func}`setup` 函数。</span>
+<span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span>
+<span class="p">]</span>
+
+<span class="c1"># 根文件的文件名，即包含根 ``toctree`` 指令的文件。默认为 ``&#39;index&#39;``。</span>
+<span class="n">root_doc</span> <span class="o">=</span> <span class="s1">&#39;index&#39;</span> 
+
+<span class="c1"># Add any paths that contain templates here, relative to this directory.</span>
+<span class="n">templates_path</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;_templates&#39;</span><span class="p">]</span>
+
+<span class="c1"># The language for content autogenerated by Sphinx. Refer to documentation</span>
+<span class="c1"># for a list of supported languages.</span>
+<span class="c1">#</span>
+<span class="c1"># This is also used if you do content translation via gettext catalogs.</span>
+<span class="c1"># Usually you set &quot;language&quot; from the command line for these cases.</span>
+<span class="n">language</span> <span class="o">=</span> <span class="s1">&#39;zh_CN&#39;</span>
+
+<span class="c1"># 相对于源目录的模式列表，匹配在寻找源文件时要忽略的文件和目录。</span>
+<span class="c1"># 此模式也影响 ``html_static_path`` 和 ``html_extra_path``。</span>
+<span class="n">exclude_patterns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;_build&#39;</span><span class="p">,</span> <span class="s1">&#39;Thumbs.db&#39;</span><span class="p">,</span> <span class="s1">&#39;.DS_Store&#39;</span><span class="p">]</span>
+
+
+<span class="c1"># -- Options for HTML output -------------------------------------------------</span>
+
+<span class="c1"># The theme to use for HTML and HTML Help pages.  See the documentation for</span>
+<span class="c1"># a list of builtin themes.</span>
+<span class="c1">#</span>
+<span class="n">html_theme</span> <span class="o">=</span> <span class="s1">&#39;alabaster&#39;</span>
+
+<span class="c1"># Add any paths that contain custom static files (such as style sheets) here,</span>
+<span class="c1"># relative to this directory. They are copied after the builtin static files,</span>
+<span class="c1"># so a file named &quot;default.css&quot; will overwrite the builtin &quot;default.css&quot;.</span>
+<span class="n">html_static_path</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;_static&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+              </div>
+              
+              
+              <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="index.html" title="上一页 页">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">上一页</p>
+            <p class="prev-next-title">xyzstyle</p>
+        </div>
+    </a>
+</div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+  
+    <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2022, xinetzone.<br>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="last-updated">
+最后更新于 2022-03-14, 05:58:15.<br>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>
