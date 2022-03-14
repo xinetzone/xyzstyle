@@ -34,15 +34,13 @@ Home = "https://github.com/xinetzone/xyzstyle"
 [project.optional-dependencies]
 doc = [
   "myst-parser",
-  "pandas",
   "pytest",
   "pytest-regressions",
   "sphinxext-rediraffe",
-  "sphinx-sitemap", # For demo examples
-  "jupyter_sphinx",
-  "plotly",
-  "numpy",
-  "xarray",
+  "pandas", # "sphinx-sitemap", # For demo examples  # "jupyter_sphinx",
+  # "plotly",
+  # "numpy",
+  # "xarray",
   "invoke",
 ]
 
