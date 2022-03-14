@@ -33,7 +33,7 @@ Home = "https://github.com/xinetzone/xyzstyle"
 
 [project.optional-dependencies]
 doc = [
-  "myst-parser",
+  "myst-nb",
   "pytest",
   "pytest-regressions",
   "sphinxext-rediraffe",

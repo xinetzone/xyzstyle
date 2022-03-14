@@ -31,7 +31,7 @@ release = '0.0.1rc1'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    'myst_parser',
+    'myst_nb',
     'sphinx.ext.intersphinx',
     'sphinx_copybutton',
     'sphinx.ext.autosummary',
@@ -93,3 +93,60 @@ def setup(app):
     app.add_object_type('confval', 'confval',
                         objname='configuration value',
                         indextemplate='pair: %s; configuration value')
+
+# MyST-NB 设置
+# 如果你希望stderr和stdout中的每个输出都被合并成一个流，请使用以下配置。
+# 避免将 jupter 执行报错的信息输出到 cmd
+nb_merge_streams = True
+execution_allow_errors = True
+jupyter_execute_notebooks = "cache"
+
+nb_render_priority = {
+    "html": (
+        "application/vnd.jupyter.widget-view+json",
+        "application/javascript",
+        "text/html",
+        "image/svg+xml",
+        "image/png",
+        "image/jpeg",
+        "text/markdown",
+        "text/latex",
+        "text/plain",
+    ),
+    'gettext': ()
+}
+
+# -- 国际化输出 ----------------------------------------------------------------
+gettext_compact = False
+locale_dirs = ['locales/']
+
+# Napoleon 设置
+napoleon_google_docstring = True
+napoleon_numpy_docstring = False
+napoleon_include_init_with_doc = True
+napoleon_include_private_with_doc = True
+napoleon_include_special_with_doc = True
+napoleon_use_admonition_for_examples = True
+napoleon_use_admonition_for_notes = True
+napoleon_use_admonition_for_references = True
+napoleon_use_ivar = True
+napoleon_use_param = True
+napoleon_use_rtype = True
+napoleon_preprocess_types = True
+napoleon_type_aliases = None
+napoleon_attr_annotations = True
+
+# ``pydata-sphinx-theme`` 配置
+autosummary_generate = True
+html_theme_options = {
+    "footer_items": ["copyright", "last-updated", "sphinx-version", ],
+    "github_url": "https://github.com/xinetzone/pytorch-book",
+    "use_edit_page_button": True,
+}
+
+html_context = {
+    "github_user": "xinetzone",
+    "github_repo": "pytorch-book",
+    "github_version": "main",
+    "doc_path": "docs",
+}
