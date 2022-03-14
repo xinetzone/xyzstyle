@@ -140,13 +140,13 @@ napoleon_attr_annotations = True
 autosummary_generate = True
 html_theme_options = {
     "footer_items": ["copyright", "last-updated", "sphinx-version", ],
-    "github_url": "https://github.com/xinetzone/pytorch-book",
+    "github_url": "https://github.com/xinetzone/xyzstyle",
     "use_edit_page_button": True,
 }
 
 html_context = {
     "github_user": "xinetzone",
-    "github_repo": "pytorch-book",
+    "github_repo": "xyzstyle",
     "github_version": "main",
     "doc_path": "docs",
 }
