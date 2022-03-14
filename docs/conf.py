@@ -5,15 +5,15 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
 
 # -- Path setup --------------------------------------------------------------
+import sys
+from pathlib import Path
 
-# If extensions (or modules to document with autodoc) are in another directory,
-# add these directories to sys.path here. If the directory is relative to the
-# documentation root, use os.path.abspath to make it absolute, like shown here.
-#
-# import os
-# import sys
-# sys.path.insert(0, os.path.abspath('.'))
+if sys.platform == 'win32':
+    import asyncio
+    asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
 
+ROOT = Path(__file__).parent.absolute()
+sys.path.extend([str(ROOT)])
 
 # -- Project information -----------------------------------------------------
 
@@ -22,7 +22,7 @@ copyright = '2022, xinetzone'
 author = 'xinetzone'
 
 # The full version, including alpha/beta/rc tags
-release = '0.0.1'
+release = '0.0.1rc1'
 
 
 # -- General configuration ---------------------------------------------------
@@ -31,7 +31,13 @@ release = '0.0.1'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    "myst_parser"
+    'myst_parser',
+    'sphinx.ext.intersphinx',
+    'sphinx_copybutton',
+    'sphinx.ext.autosummary',
+    'sphinx.ext.viewcode',
+    # 'sphinx.ext.autosectionlabel',
+    'sphinx.ext.napoleon',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -75,3 +81,15 @@ html_last_updated_fmt = '%Y-%m-%d, %H:%M:%S'
 html_theme_options = {
     "footer_items": ["copyright", "last-updated", "sphinx-version", ],
 }
+
+intersphinx_mapping = {
+    'python': ('https://daobook.github.io/cpython/', None),
+    'sphinx': ('https://daobook.github.io/sphinx/', None),
+    'peps': ('https://daobook.github.io/peps', None),
+}
+
+
+def setup(app):
+    app.add_object_type('confval', 'confval',
+                        objname='configuration value',
+                        indextemplate='pair: %s; configuration value')

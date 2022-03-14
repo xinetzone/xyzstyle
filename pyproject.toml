@@ -37,10 +37,7 @@ doc = [
   "pytest",
   "pytest-regressions",
   "sphinxext-rediraffe",
-  "pandas", # "sphinx-sitemap", # For demo examples  # "jupyter_sphinx",
-  # "plotly",
-  # "numpy",
-  # "xarray",
+  "sphinx_copybutton",
   "invoke",
 ]
 
