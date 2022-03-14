@@ -196,6 +196,10 @@
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
 <span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
 
+<span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">platform</span> <span class="o">==</span> <span class="s1">&#39;win32&#39;</span><span class="p">:</span>
+    <span class="kn">import</span> <span class="nn">asyncio</span>
+    <span class="n">asyncio</span><span class="o">.</span><span class="n">set_event_loop_policy</span><span class="p">(</span><span class="n">asyncio</span><span class="o">.</span><span class="n">WindowsSelectorEventLoopPolicy</span><span class="p">())</span>
+
 <span class="n">ROOT</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">absolute</span><span class="p">()</span>
 <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">ROOT</span><span class="p">)])</span>
 </pre></div>
@@ -291,7 +295,7 @@
     
     <div class="footer-item">
       <p class="last-updated">
-最后更新于 2022-03-14, 07:33:42.<br>
+最后更新于 2022-03-14, 09:25:49.<br>
 </p>
     </div>
     

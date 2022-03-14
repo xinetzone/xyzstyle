@@ -12,6 +12,10 @@
 import sys
 from pathlib import Path
 
+if sys.platform == 'win32':
+    import asyncio
+    asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
+
 ROOT = Path(__file__).parent.absolute()
 sys.path.extend([str(ROOT)])
 ```
