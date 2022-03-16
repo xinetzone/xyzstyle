@@ -4,24 +4,23 @@
 <html lang="zh_CN">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sphinx 配置 &#8212; xyzstyle 0.0.1rc1 文档</title>
     
-    <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-  
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
     
-    <link rel="stylesheet"
-      href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
-  
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
     
       
-  
+
     
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/css/style.css" />
@@ -30,8 +29,8 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/default.css" />
     
-    <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
-  
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
@@ -98,8 +97,10 @@
       <div class="navbar-end-item">
         <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
         <li class="nav-item">
-          <a class="nav-link" href="https://github.com/xinetzone/xyzstyle" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
-            <label class="sr-only">GitHub</label></a>
+          <a class="nav-link" href="https://github.com/xinetzone/xyzstyle" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
         </li>
       </ul>
       </div>
@@ -115,8 +116,7 @@
           
             
             <!-- Only show if we have sidebars configured, else just a small margin  -->
-            <div class="col-12 col-md-3 bd-sidebar">
-              <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
@@ -124,9 +124,6 @@
     
   </div>
 </nav>
-              </div>
-              <div class="sidebar-end-items">
-              </div>
             </div>
             
           
@@ -186,11 +183,11 @@
               
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="sphinx">
+  <div class="tex2jax_ignore mathjax_ignore section" id="sphinx">
 <h1>Sphinx 配置<a class="headerlink" href="#sphinx" title="永久链接至标题">¶</a></h1>
 <p>参考：<a class="reference external" href="https://daobook.github.io/sphinx/usage/configuration.html" title="(在 Sphinx v4.4.0)"><span>配置</span></a></p>
 <p>本篇将列出一些常用的配置。</p>
-<section id="path">
+<div class="section" id="path">
 <h2>Path 设置<a class="headerlink" href="#path" title="永久链接至标题">¶</a></h2>
 <p>如果 <a class="reference external" href="https://daobook.github.io/sphinx/usage/configuration.html#confval-extensions" title="(在 Sphinx v4.4.0)"><code class="xref std std-confval docutils literal notranslate"><span class="pre">extensions</span></code></a> （或要用 <a class="reference external" href="https://daobook.github.io/sphinx/usage/extensions/autodoc.html#module-sphinx.ext.autodoc" title="(在 Sphinx v4.4.0)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sphinx.ext.autodoc</span></code></a> 文档的模块）在另一个目录中，将这些目录添加到 <a class="reference external" href="https://daobook.github.io/cpython/library/sys.html#sys.path" title="(在 Python v3.11)"><code class="xref py py-data docutils literal notranslate"><span class="pre">sys.path</span></code></a>。如果目录是相对于文档根目录的，那么使用 <a class="reference external" href="https://daobook.github.io/cpython/library/pathlib.html#pathlib.Path.absolute" title="(在 Python v3.11)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pathlib.Path.absolute()</span></code></a> 将其设置为绝对目录，如下面所示：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
@@ -204,8 +201,8 @@
 <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">ROOT</span><span class="p">)])</span>
 </pre></div>
 </div>
-</section>
-<section id="id1">
+</div>
+<div class="section" id="id1">
 <h2>项目信息<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <p>项目信息的一般信息：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">project</span> <span class="o">=</span> <span class="s1">&#39;xyz&#39;</span> <span class="c1"># 记录的项目名称</span>
@@ -218,8 +215,8 @@
 <span class="n">release</span> <span class="o">=</span> <span class="s1">&#39;0.0.1rc1&#39;</span>
 </pre></div>
 </div>
-</section>
-<section id="id2">
+</div>
+<div class="section" id="id2">
 <h2>通用配置<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p><a class="reference external" href="https://daobook.github.io/sphinx/usage/configuration.html#confval-extensions" title="(在 Sphinx v4.4.0)"><code class="xref std std-confval docutils literal notranslate"><span class="pre">extensions</span></code></a> 字符串列表</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 在这里添加任何 Sphinx 插件模块名，作为字符串。</span>
@@ -259,15 +256,15 @@
 <span class="n">html_static_path</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;_static&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>
               
               
               <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="index.html" title="上一页 页">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -283,8 +280,8 @@
       </div>
     </div>
   
-    <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
-  <footer class="footer mt-5 mt-md-0">
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
   <div class="container">
     
     <div class="footer-item">
@@ -295,7 +292,7 @@
     
     <div class="footer-item">
       <p class="last-updated">
-最后更新于 2022-03-14, 09:25:49.<br>
+最后更新于 2022-03-16, 03:16:55.<br>
 </p>
     </div>
     
