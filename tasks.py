@@ -1,11 +1,4 @@
-from invoke import Collection, task
-from _docs import docs, write
+from d2py.tools.write import site
 
 
-@task
-def install(ctx, name='doc'):
-    # --use-feature=in-tree-build
-    ctx.run(f'pip install .[{name}] ')
-
-
-ns = Collection(docs, write, install)
+namespace = site(name='docs', target='output/html')
