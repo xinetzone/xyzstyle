@@ -63,19 +63,19 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 # a list of builtin themes.
 #
 html_theme = 'xyzstyle'
-html_theme_path = ['../src/themes']
+html_theme_path = [f'{ROOT}/src/themes']
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['_static']
+html_static_path = [f'{ROOT}/docs/_static']
 html_css_files = ["default.css"]
 
-html_logo = '_static/images/logo.jpg'
+html_logo = f'{ROOT}/docs/_static/images/logo.jpg'
 # The name of an image file (within the static path) to use as favicon of the
 # docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32
 # pixels large.
-html_favicon = '_static/images/favicon.jpg'
+html_favicon = f'{ROOT}/docs/_static/images/favicon.jpg'
 
 html_last_updated_fmt = '%Y-%m-%d, %H:%M:%S'
 
@@ -133,7 +133,7 @@ napoleon_attr_annotations = True
 
 # ``pydata-sphinx-theme`` 配置
 # Define the json_url for our version switcher.
-json_url = "_static/switcher.json"
+json_url = f'{ROOT}/docs/_static/switcher.json'
 
 # Define the version we use for matching in the version switcher.
 version_match = os.environ.get("READTHEDOCS_VERSION")
@@ -146,7 +146,7 @@ if not version_match or version_match.isdigit():
         version_match = "latest"
         # We want to keep the relative reference if we are in dev mode
         # but we want the whole url if we are effectively in a released version
-        json_url = "_static/switcher.json"
+        json_url = f'{ROOT}/docs/_static/switcher.json'
     else:
         version_match = "v" + release
 autosummary_generate = True
