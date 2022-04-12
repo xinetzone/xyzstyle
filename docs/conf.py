@@ -44,8 +44,7 @@ extensions = [
 ]
 
 # Add any paths that contain templates here, relative to this directory.
-templates_path = [f'{ROOT}/_templates',
-                #   f'{ROOT}/src/themes/xyzstyle/_templates',
+templates_path = [f'{ROOT}/docs/_templates',
                   str(xyzstyle.get_html_template_path()),
                   ]
 
@@ -138,7 +137,7 @@ napoleon_attr_annotations = True
 
 # ``pydata-sphinx-theme`` 配置
 # Define the json_url for our version switcher.
-json_url = f'{ROOT}/docs/_static/switcher.json'
+json_url = 'https://xinetzone.github.io/xyzstyle/_static/switcher.json'
 
 # Define the version we use for matching in the version switcher.
 version_match = os.environ.get("READTHEDOCS_VERSION")
