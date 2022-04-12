@@ -1,4 +1,6 @@
 """Sphinx demo."""
+from pathlib import Path
+import pydata_sphinx_theme
 
 __version__ = '0.0.1'
 
@@ -18,6 +20,13 @@ __version__ = '0.0.1'
 # __version__ = "1.3.1"
 # __version_full__ = __version__
 
+def get_html_templates_path(pkg_path=__file__,
+                            template_path='../themes/xyzstyle/_templates'):
+    """
+    Return path to Sphinx templates folder.
+    """
+    pkgdir = Path(pkg_path).parent
+    return str(pkgdir/template_path)
 
 # def get_path():
 #     """
