@@ -4,11 +4,13 @@
 <html lang="zh_CN">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>xyzstyle &#8212; xyzstyle 0.0.1rc1 文档</title>
     
-  <link href="_static/css/theme.css" rel="stylesheet">
-  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,10 +20,6 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/css/style.css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
@@ -29,7 +27,8 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/default.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -51,7 +50,7 @@
     <link rel="stylesheet" href="_static/css/custom.css"/>
 
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -97,10 +96,8 @@
       <div class="navbar-end-item">
         <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
         <li class="nav-item">
-          <a class="nav-link" href="https://github.com/xinetzone/xyzstyle" rel="noopener" target="_blank" title="GitHub">
-            <span><i class="fab fa-github-square"></i></span>
-            <label class="sr-only">GitHub</label>
-          </a>
+          <a class="nav-link" href="https://github.com/xinetzone/xyzstyle" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label></a>
         </li>
       </ul>
       </div>
@@ -116,7 +113,8 @@
           
             
             <!-- Only show if we have sidebars configured, else just a small margin  -->
-            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+            <div class="col-12 col-md-3 bd-sidebar">
+              <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
@@ -124,6 +122,9 @@
     
   </div>
 </nav>
+              </div>
+              <div class="sidebar-end-items">
+              </div>
             </div>
             
           
@@ -134,7 +135,7 @@
               
               <div class="toc-item">
                 
-<div class="tocsection onthispage pt-5 pb-3">
+<div class="tocsection onthispage mt-5 pt-1 pb-3">
     <i class="fas fa-list"></i> On this page
 </div>
 
@@ -178,11 +179,11 @@
               
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="xyzstyle">
-<h1>xyzstyle<a class="headerlink" href="#xyzstyle" title="永久链接至标题">¶</a></h1>
-<p><a class="reference external" href="https://pypi.org/project/xyzstyle/"><img alt="PyPI" src="https://img.shields.io/pypi/v/xyzstyle.svg" /></a> <a class="reference external" href="https://github.com/xinetzone/xyzstyle/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/xinetzone/xyzstyle" /></a> <a class="reference external" href="https://github.com/xinetzone/xyzstyle/network"><img alt="GitHub forks" src="https://img.shields.io/github/forks/xinetzone/xyzstyle" /></a> <a class="reference external" href="https://github.com/xinetzone/xyzstyle/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/xinetzone/xyzstyle" /></a> <a class="reference external" href="https://github.com/xinetzone/xyzstyle/blob/main/LICENSE"><img alt="GitHub license" src="https://img.shields.io/github/license/xinetzone/xyzstyle" /></a> <img alt="repo size" src="https://img.shields.io/github/repo-size/xinetzone/xyzstyle.svg" /> <a class="reference external" href="https://github.com/xinetzone/xyzstyle/graphs/contributors"><img alt="contributors" src="https://img.shields.io/github/contributors/xinetzone/xyzstyle.svg" /></a> <a class="reference external" href="https://github.com/xinetzone/xyzstyle/watchers"><img alt="watcher" src="https://img.shields.io/github/watchers/xinetzone/xyzstyle.svg" /></a> <a class="reference external" href="https://github.com/xinetzone/pytorch-book/watchers"><img alt="watcher" src="https://img.shields.io/github/watchers/xinetzone/pytorch-book.svg" /></a> <a class="reference external" href="https://pepy.tech/project/xyzstyle"><img alt="Downloads" src="https://pepy.tech/badge/xyzstyle/week" /></a></p>
-<div class="section" id="pypi">
-<h2>支持 PyPI<a class="headerlink" href="#pypi" title="永久链接至标题">¶</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="xyzstyle">
+<h1>xyzstyle<a class="headerlink" href="#xyzstyle" title="永久链接至标题">#</a></h1>
+<p><a class="reference external" href="https://pypi.org/project/xyzstyle/"><img alt="PyPI" src="https://img.shields.io/pypi/v/xyzstyle.svg" /></a> <a class="reference external" href="https://github.com/xinetzone/xyzstyle/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/xinetzone/xyzstyle" /></a> <a class="reference external" href="https://github.com/xinetzone/xyzstyle/network"><img alt="GitHub forks" src="https://img.shields.io/github/forks/xinetzone/xyzstyle" /></a> <a class="reference external" href="https://github.com/xinetzone/xyzstyle/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/xinetzone/xyzstyle" /></a> <a class="reference external" href="https://github.com/xinetzone/xyzstyle/blob/main/LICENSE"><img alt="GitHub license" src="https://img.shields.io/github/license/xinetzone/xyzstyle" /></a> <img alt="repo size" src="https://img.shields.io/github/repo-size/xinetzone/xyzstyle.svg" /> <a class="reference external" href="https://github.com/xinetzone/xyzstyle/graphs/contributors"><img alt="contributors" src="https://img.shields.io/github/contributors/xinetzone/xyzstyle.svg" /></a> <a class="reference external" href="https://github.com/xinetzone/xyzstyle/watchers"><img alt="watcher" src="https://img.shields.io/github/watchers/xinetzone/xyzstyle.svg" /></a> <a class="reference external" href="https://github.com/xinetzone/pytorch-book/watchers"><img alt="watcher" src="https://img.shields.io/github/watchers/xinetzone/pytorch-book.svg" /></a> <a class="reference external" href="https://pepy.tech/project/xyzstyle"><img alt="Downloads" src="https://pepy.tech/badge/xyzstyle/week" /></a>  <a class="reference external" href="https://pepy.tech/project/xyzstyle"><img alt="Downloads" src="https://pepy.tech/badge/xyzstyle" /></a></p>
+<section id="pypi">
+<h2>支持 PyPI<a class="headerlink" href="#pypi" title="永久链接至标题">#</a></h2>
 <p>需要安装 <code class="docutils literal notranslate"><span class="pre">xyzstyle</span></code> 包：</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip install xyzstyle
 </pre></div>
@@ -197,16 +198,16 @@
 </li>
 </ul>
 </div>
-</div>
-<div class="section" id="id1">
-<h2>目录和索引<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+</section>
+<section id="id1">
+<h2>目录和索引<a class="headerlink" href="#id1" title="永久链接至标题">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">索引</span></a></p></li>
 <li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">模块索引</span></a></p></li>
 <li><p><a class="reference internal" href="search.html"><span class="std std-ref">搜索页面</span></a></p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
 
               </div>
@@ -229,7 +230,8 @@
       </div>
     </div>
   
-  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
 <footer class="footer mt-5 mt-md-0">
   <div class="container">
     
@@ -241,13 +243,13 @@
     
     <div class="footer-item">
       <p class="last-updated">
-最后更新于 2022-03-16, 04:07:27.<br>
+最后更新于 2022-04-12, 17:19:25.<br>
 </p>
     </div>
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
 </p>
     </div>
     
