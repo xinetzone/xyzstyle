@@ -3,45 +3,33 @@ from pathlib import Path
 import pydata_sphinx_theme
 
 __version__ = '0.0.1'
+__version_full__ = __version__
 
 
-# def update_context(app, pagename, templatename, context, doctree):
-#     context["xyzstyle_version"] = __version__
-
-
-# def setup(app):
-#     here = Path(__file__).parent.resolve()
-#     theme_path = here / "themes" / "xyzstyle"
-#     app.add_html_theme("xyzstyle", str(theme_path))
-#     app.connect("html-page-context", update_context)
-#     return {"version": "0.3.0", "parallel_read_safe": True}
-# import os
-
-# __version__ = "1.3.1"
-# __version_full__ = __version__
-
-def get_html_templates_path(pkg_path=__file__,
-                            template_path='../themes/xyzstyle/_templates'):
+def get_html_theme_path():
     """
     Return path to Sphinx templates folder.
     """
-    pkgdir = Path(pkg_path).parent
-    return str(pkgdir/template_path)
+    parent = Path(__file__).parents[1].resolve()
+    theme_path = parent / "themes" / "xyzstyle"
+    return theme_path
 
-# def get_path():
-#     """
-#     Shortcut for users whose theme is next to their conf.py.
-#     """
-#     # Theme directory is defined as our parent directory
-#     return os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
+def get_html_template_path():
+    theme_dir = get_html_theme_path()
+    return str(theme_dir/"_templates")
 
 
-# def update_context(app, pagename, templatename, context, doctree):
-#     context["xyzstyle_version"] = __version_full__
+def update_context(app, pagename, templatename, context, doctree):
+    context["xyzstyle_version"] = __version_full__
 
 
-# def setup(app):
-#     theme_path = os.path.abspath(os.path.dirname(__file__))
-#     app.add_html_theme("xyzstyle", theme_path)
-#     app.connect("html-page-context", update_context)
-#     return {"version": "0.3.0", "parallel_read_safe": True}
+def setup(app):
+    theme_dir = get_html_theme_path()
+    app.add_html_theme("xyzstyle", str(theme_dir))
+    app.connect("html-page-context", update_context)
+    # Update templates for sidebar
+    app.config.templates_path.append(str(theme_dir/"_templates"))
+    return {
+        "parallel_read_safe": True,
+        "parallel_write_safe": True,
+    }
