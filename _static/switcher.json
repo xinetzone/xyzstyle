@@ -2,16 +2,21 @@
   {
     "name": "dev",
     "version": "latest",
-    "url": "https://xinetzone.github.io/xyzstyle/latest/"
+    "url": "https://xyzstyle.readthedocs.io/zh/latest/"
   },
   {
     "name": "main",
+    "version": "main",
+    "url": "https://xinetzone.github.io/xyzstyle/"
+  },
+  {
+    "name": "0.0.1-dev",
     "version": "v0.0.1-dev",
-    "url": "https://xinetzone.github.io/xyzstyle/v0.0.1-dev/"
+    "url": "https://xyzstyle.readthedocs.io/zh/v0.0.1-dev/"
   },
   {
     "name": "0.0.1",
     "version": "v0.0.1",
-    "url": "https://xinetzone.github.io/xyzstyle/v0.0.1/"
+    "url": "https://xyzstyle.readthedocs.io/zh/v0.0.1/"
   }
 ]
