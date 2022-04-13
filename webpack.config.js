@@ -22,7 +22,7 @@ const dedent = require("dedent");
 //
 const staticPath = resolve(
   __dirname,
-  "src/themes/xyzstyle/static"
+  "src/xyzstyle/themes/xyzstyle/static"
 );
 const vendor = resolve(staticPath, "vendor");
 const vendorVersions = {
