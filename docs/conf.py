@@ -6,6 +6,9 @@ ROOT = Path('../').resolve()
 sys.path.extend([str(ROOT/'src')])
 import xyzstyle
 
+# The full version, including alpha/beta/rc tags
+release = xyzstyle.__version__
+
 
 def setup(app):
     app.add_object_type('confval', 'confval',
@@ -139,20 +142,15 @@ napoleon_attr_annotations = True
 # Define the json_url for our version switcher.
 json_url = 'https://xinetzone.github.io/xyzstyle/_static/switcher.json'
 
-# Define the version we use for matching in the version switcher.
-version_match = os.environ.get("READTHEDOCS_VERSION")
-# If READTHEDOCS_VERSION doesn't exist, we're not on RTD
-# If it is an integer, we're in a PR build and the version isn't correct.
-if not version_match or version_match.isdigit():
-    # For local development, infer the version to match from the package.
-    release = xyzstyle.__version__  # The full version, including alpha/beta/rc tags
-    if "dev" in release:
-        version_match = "latest"
-        # We want to keep the relative reference if we are in dev mode
-        # but we want the whole url if we are effectively in a released version
-        json_url = f'{ROOT}/docs/_static/switcher.json'
-    else:
-        version_match = "v" + release
+version = release
+
+switcher_version = f'v{version}'
+if ".dev" in version:
+    switcher_version = "dev"
+elif "rc" in version:
+    switcher_version = version.split("rc")[0] + " (rc)"
+
+
 autosummary_generate = True
 html_theme_options = {
     "footer_items": ["copyright", "last-updated", "sphinx-version", ],
@@ -161,8 +159,10 @@ html_theme_options = {
     "navbar_end": ["theme-switcher", "version-switcher", "navbar-icon-links"],
     "switcher": {
         "json_url": json_url,
-        "version_match": version_match,
+        "version_match": switcher_version,
+        "url_template": "https://pandas.pydata.org/{version}/",
     },
+
 }
 
 html_context = {

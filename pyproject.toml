@@ -1,22 +1,32 @@
 [build-system]
-build-backend = "flit_core.buildapi"
-requires = ["flit_core >=3.4,<4"]
+requires = ["sphinx-theme-builder >= 0.2.0a7"]
+build-backend = "sphinx_theme_builder"
 
-[project]
-authors = [{name = "xinetzone", email = "735613050@qq.com"}]
-dynamic = ["version", "description"]
-license = {file = "LICENSE"}
-name = "xyzstyle"
-readme = "README.md"
-requires-python = ">=3.9"
-
-dependencies = [
-  "d2py",
-  "pydata_sphinx_theme"
+[tool.sphinx-theme-builder]
+node-version = "16.13.2"
+theme-name = "pydata_sphinx_theme"
+additional-compiled-static-assets = [
+  "webpack-macros.html",
+  "vendor/",
 ]
 
+[project]
+name = "xyzstyle"
+description = "Bootstrap-based Sphinx theme from the PyData community"
+dynamic = ["version"]
+readme = "README.md"
+
+requires-python = ">=3.8"
+dependencies = [
+  "sphinx>=3.5.4,<5",
+  "beautifulsoup4",
+  "docutils!=0.17.0",
+  "packaging"
+]
+
+license = { file = "LICENSE" }
 maintainers = [
-  {name = "xinetzone", email = "735613050@qq.com"},
+  { name = "Joris Van den Bossche", email = "jorisvandenbossche@gmail.com" },
 ]
 
 classifiers = [
@@ -24,22 +34,29 @@ classifiers = [
   "Programming Language :: Python :: 3",
   "Framework :: Sphinx",
   "Framework :: Sphinx :: Theme",
-  "License :: OSI Approved :: Apache Software License",
+  "License :: OSI Approved :: BSD License",
   "Operating System :: OS Independent",
 ]
 
-[project.urls]
-Home = "https://github.com/xinetzone/xyzstyle"
-
 [project.optional-dependencies]
 doc = [
-  "myst-nb",
+  "numpydoc",
+  "myst-parser",
+  "pandas",
   "pytest",
   "pytest-regressions",
   "sphinxext-rediraffe",
-  "sphinx-copybutton",
+  "sphinx-sitemap",
+  # For demo examples
+  "jupyter_sphinx",
+  "plotly",
+  "numpy",
+  "xarray",
 ]
-
+test = [
+  "pytest",
+  "xyzstyle[doc]",
+]
 coverage = [
   "pytest-cov",
   "codecov",
@@ -48,16 +65,9 @@ coverage = [
 dev = [
   "pyyaml",
   "pre-commit",
+  "nox",
   "xyzstyle[coverage]",
-]
-test = [
-  "pytest",
-  "xyzstyle[doc]",
 ]
 
 [project.entry-points]
-"sphinx.html_themes" = {xyzstyle = "xyzstyle"}
-
-[tool.flit.sdist]
-# include = ["docs/"]
-exclude = ['docs', '.git', '.github']
+"sphinx.html_themes" = { pydata_sphinx_theme = "pydata_sphinx_theme" }

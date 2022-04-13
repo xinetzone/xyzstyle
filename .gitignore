@@ -109,6 +109,7 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+.nox
 
 # Spyder project settings
 .spyderproject
@@ -128,5 +129,15 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
+# nodejs
+.nodeenv/
+.yarn-packages
+node_modules/
+
+# Editors
+.vscode
+.idea
+
 # sphinx
 output/
+*.mo
