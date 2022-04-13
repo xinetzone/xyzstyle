@@ -1,14 +1,6 @@
 [build-system]
-requires = ["sphinx-theme-builder >= 0.2.0a7"]
-build-backend = "sphinx_theme_builder"
-
-[tool.sphinx-theme-builder]
-node-version = "16.13.2"
-theme-name = "pydata_sphinx_theme"
-additional-compiled-static-assets = [
-  "webpack-macros.html",
-  "vendor/",
-]
+build-backend = "flit_core.buildapi"
+requires = ["flit_core >=3.4,<4"]
 
 [project]
 authors = [{name = "xinetzone", email = "735613050@qq.com"}]
@@ -16,13 +8,9 @@ dynamic = ["version", "description"]
 license = {file = "LICENSE"}
 name = "xyzstyle"
 readme = "README.md"
-requires-python = ">=3.8"
+requires-python = ">=3.9"
 
 dependencies = [
-  "sphinx>=3.5.4,<5",
-  "beautifulsoup4",
-  "docutils!=0.17.0",
-  "packaging",
   "d2py",
   "pydata_sphinx_theme"
 ]
@@ -40,28 +28,18 @@ classifiers = [
   "Operating System :: OS Independent",
 ]
 
+[project.urls]
+Home = "https://github.com/xinetzone/xyzstyle"
+
 [project.optional-dependencies]
 doc = [
-  "numpydoc",
+  "myst-nb",
+  "pytest",
   "pytest-regressions",
   "sphinxext-rediraffe",
   "sphinx-copybutton",
-  "myst-nb",
-  "pandas",
-  "pytest",
-  "pytest-regressions",
-  "sphinxext-rediraffe",
-  "sphinx-sitemap",
-  # For demo examples
-  "jupyter_sphinx",
-  "plotly",
-  "numpy",
-  "xarray",
 ]
-test = [
-  "pytest",
-  "xyzstyle[doc]",
-]
+
 coverage = [
   "pytest-cov",
   "codecov",
@@ -70,9 +48,16 @@ coverage = [
 dev = [
   "pyyaml",
   "pre-commit",
-  "nox",
   "xyzstyle[coverage]",
+]
+test = [
+  "pytest",
+  "xyzstyle[doc]",
 ]
 
 [project.entry-points]
 "sphinx.html_themes" = {xyzstyle = "xyzstyle"}
+
+[tool.flit.sdist]
+# include = ["docs/"]
+exclude = ['docs', '.git', '.github']
