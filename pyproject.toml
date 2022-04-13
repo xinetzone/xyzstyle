@@ -11,22 +11,24 @@ additional-compiled-static-assets = [
 ]
 
 [project]
+authors = [{name = "xinetzone", email = "735613050@qq.com"}]
+dynamic = ["version", "description"]
+license = {file = "LICENSE"}
 name = "xyzstyle"
-description = "Bootstrap-based Sphinx theme from the PyData community"
-dynamic = ["version"]
 readme = "README.md"
-
 requires-python = ">=3.8"
+
 dependencies = [
   "sphinx>=3.5.4,<5",
   "beautifulsoup4",
   "docutils!=0.17.0",
-  "packaging"
+  "packaging",
+  "d2py",
+  "pydata_sphinx_theme"
 ]
 
-license = { file = "LICENSE" }
 maintainers = [
-  { name = "Joris Van den Bossche", email = "jorisvandenbossche@gmail.com" },
+  {name = "xinetzone", email = "735613050@qq.com"},
 ]
 
 classifiers = [
@@ -34,14 +36,17 @@ classifiers = [
   "Programming Language :: Python :: 3",
   "Framework :: Sphinx",
   "Framework :: Sphinx :: Theme",
-  "License :: OSI Approved :: BSD License",
+  "License :: OSI Approved :: Apache Software License",
   "Operating System :: OS Independent",
 ]
 
 [project.optional-dependencies]
 doc = [
   "numpydoc",
-  "myst-parser",
+  "pytest-regressions",
+  "sphinxext-rediraffe",
+  "sphinx-copybutton",
+  "myst-nb",
   "pandas",
   "pytest",
   "pytest-regressions",
@@ -70,4 +75,4 @@ dev = [
 ]
 
 [project.entry-points]
-"sphinx.html_themes" = { pydata_sphinx_theme = "pydata_sphinx_theme" }
+"sphinx.html_themes" = {xyzstyle = "xyzstyle"}
