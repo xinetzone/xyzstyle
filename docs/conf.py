@@ -145,7 +145,7 @@ json_url = 'https://xinetzone.github.io/xyzstyle/_static/switcher.json'
 version = release
 
 switcher_version = f'v{version}'
-if ".dev" in version:
+if "dev" in version:
     switcher_version = "dev"
 elif "rc" in version:
     switcher_version = version.split("rc")[0] + " (rc)"
