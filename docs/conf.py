@@ -19,10 +19,6 @@ def setup(app):
     # app.add_html_theme("xyzstyle", str(theme_dir))
     # # Update templates for sidebar
     # app.config.templates_path.append(str(theme_dir/"_templates"))
-    return {
-        "parallel_read_safe": True,
-        "parallel_write_safe": True,
-    }
 
 # -- Project information -----------------------------------------------------
 
@@ -149,7 +145,6 @@ if "dev" in version:
     switcher_version = "dev"
 elif "rc" in version:
     switcher_version = version.split("rc")[0] + " (rc)"
-
 
 autosummary_generate = True
 html_theme_options = {
