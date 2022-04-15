@@ -1,6 +1,5 @@
 """Sphinx demo."""
 from pathlib import Path
-import pydata_sphinx_theme
 
 __version__ = '0.0.1-dev'
 __version_full__ = __version__
