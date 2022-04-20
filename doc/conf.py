@@ -2,7 +2,8 @@ import sys
 import os
 from pathlib import Path
 
-ROOT = Path('../').resolve()
+ROOT = Path('__file__').resolve().parents[1]
+print(ROOT)
 sys.path.extend([str(ROOT/'src')])
 import xyzstyle
 

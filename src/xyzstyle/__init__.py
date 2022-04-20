@@ -1,7 +1,7 @@
 """Sphinx demo."""
 from pathlib import Path
 
-__version__ = '0.0.1-dev'
+__version__ = '0.0.2'
 __version_full__ = __version__
 
 
@@ -30,6 +30,7 @@ def setup(app):
     template_path = get_html_template_path()
     app.config.templates_path.append(str(template_path))
     return {
+        "version": __version_full__,
         "parallel_read_safe": True,
         "parallel_write_safe": True,
     }
