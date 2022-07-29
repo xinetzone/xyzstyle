@@ -8,7 +8,7 @@ dynamic = ["version", "description"]
 license = {file = "LICENSE"}
 name = "xyzstyle"
 readme = "README.md"
-requires-python = ">=3.9"
+requires-python = ">=3.8"
 
 dependencies = [
   "d2py",
@@ -34,13 +34,13 @@ Home = "https://github.com/xinetzone/xyzstyle"
 [project.optional-dependencies]
 doc = [
   "myst-nb",
-  "pytest-regressions",
   "sphinxext-rediraffe",
   "sphinx-copybutton",
 ]
 
 coverage = [
   "pytest-cov",
+  "pytest-regressions",
   "codecov",
   "xyzstyle[test]",
 ]
