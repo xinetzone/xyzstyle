@@ -46,7 +46,7 @@ extensions = [
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = [f'{ROOT}/docs/_templates',
-                  str(xyzstyle.get_html_template_path()),
+                #   str(xyzstyle.get_html_template_path()),
                   str(ROOT/'doc')
                   ]
 
