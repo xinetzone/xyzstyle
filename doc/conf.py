@@ -99,23 +99,14 @@ intersphinx_mapping = {
 # 如果你希望stderr和stdout中的每个输出都被合并成一个流，请使用以下配置。
 # 避免将 jupter 执行报错的信息输出到 cmd
 nb_merge_streams = True
-execution_allow_errors = True
-jupyter_execute_notebooks = "cache"
+nb_execution_allow_errors = True
+nb_execution_mode = "cache" #'off'
 
-nb_render_priority = {
-    "html": (
-        "application/vnd.jupyter.widget-view+json",
-        "application/javascript",
-        "text/html",
-        "image/svg+xml",
-        "image/png",
-        "image/jpeg",
-        "text/markdown",
-        "text/latex",
-        "text/plain",
-    ),
-    'gettext': ()
-}
+nb_mime_priority_overrides = [
+    ('html', 'text/plain', 0),  # 最高级别
+    ('latex', 'image/jpeg', None),  # 禁用
+    # ('*', 'customtype', 20)
+]
 
 # -- 国际化输出 ----------------------------------------------------------------
 gettext_compact = False
@@ -157,8 +148,7 @@ html_theme_options = {
     "navbar_end": ["theme-switcher", "version-switcher", "navbar-icon-links"],
     "switcher": {
         "json_url": json_url,
-        "version_match": switcher_version,
-        "url_template": "https://pandas.pydata.org/{version}/",
+        "version_match": switcher_version
     },
 
 }
