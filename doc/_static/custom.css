@@ -6,11 +6,15 @@
 /* Color of explicit versions should be orange */
 #version_switcher
   a:not([data-version-name*="stable"]):not([data-version-name="dev"]) {
-  background-color: #f8f9fa;
-  color: grey;
+  background-color: #d9dadc;
+  color: rgb(243, 234, 234);
 }
 
 /* If we're on a dev version, make the switcher button orange */
 #version_switcher_button[data-active-version-name*="dev"] {
   background-color: rgb(255 138 62);
+}
+
+.bd-sidebar-primary, .bd-sidebar-secondary {
+  background-color: #e4e7eb;
 }
