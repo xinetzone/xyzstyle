@@ -82,10 +82,6 @@ html_favicon = f'{ROOT}/doc/_static/images/favicon.jpg'
 
 html_last_updated_fmt = '%Y-%m-%d, %H:%M:%S'
 
-html_theme_options = {
-    "footer_items": ["copyright", "last-updated", "sphinx-version", ],
-}
-
 intersphinx_mapping = {
     'python': ('https://daobook.github.io/cpython/', None),
     'sphinx': ('https://daobook.github.io/sphinx/', None),
@@ -147,7 +143,6 @@ html_theme_options = {
         "json_url": json_url,
         "version_match": switcher_version
     },
-
 }
 
 html_context = {
