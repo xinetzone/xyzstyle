@@ -1,7 +1,5 @@
 # Sphinx 配置
 
-参考：{doc}`usage/configuration`
-
 本篇将列出一些常用的配置。
 
 ## Path 设置
