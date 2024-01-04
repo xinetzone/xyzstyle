@@ -53,6 +53,10 @@ test = [
   "pytest",
   "xyzstyle[doc]",
 ]
+docx = [
+  "python-docx",
+  "xyzstyle[doc]"
+]
 
 [project.entry-points]
 "sphinx.html_themes" = {xyzstyle = "xyzstyle"}
