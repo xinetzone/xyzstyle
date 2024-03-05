@@ -142,3 +142,7 @@ node_modules/
 output/
 *.mo
 _build/
+
+# Jupyter Lite
+*.db
+_contents/

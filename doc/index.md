@@ -5,6 +5,7 @@
 :maxdepth: 2
 
 config
+ipywidgets/index
 ```
 
 ## 目录和索引

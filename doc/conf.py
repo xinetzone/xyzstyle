@@ -42,6 +42,7 @@ extensions = [
     'sphinx.ext.viewcode',
     # 'sphinx.ext.autosectionlabel',
     'sphinx.ext.napoleon',
+    'jupyterlite_sphinx',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -135,6 +136,7 @@ elif "rc" in version:
 
 autosummary_generate = True
 html_theme_options = {
+    "navigation_with_keys": True,
     "footer_start": ["copyright", "sphinx-version"],
     "footer_end": ["last-updated", ],
     "github_url": "https://github.com/xinetzone/xyzstyle",
@@ -216,3 +218,8 @@ html_sidebars = {
     ],  # This ensures we test for custom sidebars
     "demo/no-sidebar": [],  # Test what page looks like with no sidebar items
 }
+
+# suppress_warnings = ["myst.xref_missing"]
+jupyterlite_contents = f"{ROOT}/tests/lite_contents"
+jupyterlite_bind_ipynb_suffix = False
+# jupyterlite_dir = Path("doc/_build/html/lite")

@@ -1,0 +1,5 @@
+# `ipywidgets` UI
+
+```{toctree}
+intro
+```
