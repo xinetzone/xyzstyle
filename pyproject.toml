@@ -36,6 +36,13 @@ doc = [
   "myst-nb",
   "sphinxext-rediraffe",
   "sphinx-copybutton",
+  'jupyterlite-sphinx',
+  "jupyterlite-xeus",
+  "jupyterlite-core",
+  "jupyterlite-pyodide-kernel",
+  "jupyterlab",
+  "jupyter_server",
+  "jupyterlab_server",
 ]
 
 coverage = [
