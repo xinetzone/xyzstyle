@@ -37,7 +37,6 @@ extensions = [
     # "jupyter_sphinx",
     # "sphinxcontrib.youtube",
     # "numpydoc",
-    # "sphinx_togglebutton",
     "jupyterlite_sphinx",
     # "sphinx_favicon",
 ]
