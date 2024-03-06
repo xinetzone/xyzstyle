@@ -47,6 +47,7 @@ doc = [
   "sphinx-autoapi",
   "linkify-it-py",
   "jupyter-sphinx",
+  "sphinx-sitemap",
 ]
 
 coverage = [
