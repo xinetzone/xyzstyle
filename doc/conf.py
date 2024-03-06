@@ -154,6 +154,7 @@ elif version_match == "stable":
 
 html_theme_options = {
     "navigation_with_keys": True,
+    "github_url": "https://github.com/xinetzone/xyzstyle",
     "collapse_navigation": True,
     # "external_links": [
     #     {
