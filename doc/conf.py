@@ -73,7 +73,7 @@ html_theme = 'xyzstyle'
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = [f'{ROOT}/doc/_static']
-html_css_files = ["custom.css"]
+html_css_files = ["custom.css", "try_examples.css"]
 
 html_logo = f'{ROOT}/doc/_static/images/logo.jpg'
 # The name of an image file (within the static path) to use as favicon of the
