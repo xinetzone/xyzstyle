@@ -46,7 +46,7 @@ doc = [
   "jupyterlab_server",
   "sphinx-autoapi",
   "linkify-it-py",
-  "jupyter-sphinx",
+  # "jupyter-sphinx",
   "sphinx-sitemap",
 ]
 

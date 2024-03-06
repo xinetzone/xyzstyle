@@ -20,8 +20,6 @@ author = 'xinetzone'
 
 extensions = [
     "sphinx.ext.napoleon",
-    "sphinx.ext.autodoc",
-    "sphinx.ext.autosummary",
     "sphinx.ext.todo",
     "sphinx.ext.viewcode",
     # "sphinxext.rediraffe",
@@ -34,7 +32,7 @@ extensions = [
     # For extension examples and demos
     "myst_nb",
     # "ablog",
-    "jupyter_sphinx",
+    # "jupyter_sphinx",
     # "sphinxcontrib.youtube",
     # "numpydoc",
     # "sphinx_togglebutton",
