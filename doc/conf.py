@@ -25,6 +25,8 @@ extensions = [
     # "sphinxext.rediraffe",
     "sphinx_design",
     "sphinx_copybutton",
+    "sphinx.ext.autodoc",
+    "sphinx.ext.autosummary",
     "autoapi.extension",
     # custom extentions
     # "_extension.gallery_directive",
@@ -341,7 +343,7 @@ autodoc_member_order = "groupwise"
 # -- Options for autoapi -------------------------------------------------------
 autoapi_type = "python"
 autoapi_dirs = ["../src/xyzstyle"]
-autoapi_keep_files = True
+autoapi_keep_files = False # 要开始自己编写 API 文档，你可以让 AutoAPI 保留其生成的文件作为基础
 autoapi_root = "api"
 autoapi_member_order = "groupwise"
 
