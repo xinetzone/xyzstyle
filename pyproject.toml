@@ -36,6 +36,7 @@ doc = [
   "myst-nb",
   "sphinxext-rediraffe",
   "sphinx-copybutton",
+  "sphinx_design",
   'jupyterlite-sphinx',
   "jupyterlite-xeus",
   "jupyterlite-core",
