@@ -48,6 +48,7 @@ doc = [
   "linkify-it-py",
   # "jupyter-sphinx",
   "sphinx-sitemap",
+  "sphinxcontrib-katex",
 ]
 
 coverage = [
@@ -74,5 +75,5 @@ docx = [
 "sphinx.html_themes" = {xyzstyle = "xyzstyle"}
 
 [tool.flit.sdist]
-# include = ["docs/"]
-exclude = ['docs', '.git', '.github']
+# include = ["doc/"]
+exclude = ['doc', '.git', '.github']
