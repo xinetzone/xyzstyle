@@ -12,7 +12,7 @@ requires-python = ">=3.8"
 
 dependencies = [
   "d2py",
-  "pydata-sphinx-theme>=0.7.2"
+  "sphinx_book_theme"
 ]
 
 maintainers = [
@@ -34,6 +34,7 @@ Home = "https://github.com/xinetzone/xyzstyle"
 [project.optional-dependencies]
 doc = [
   "myst-nb",
+  "sphinx==7.2.5",
   "sphinxext-rediraffe",
   "sphinx-copybutton",
   "sphinx_design",
@@ -49,6 +50,7 @@ doc = [
   # "jupyter-sphinx",
   "sphinx-sitemap",
   "sphinxcontrib-katex",
+  "sphinx-thebe",
 ]
 
 coverage = [

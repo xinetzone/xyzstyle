@@ -1,9 +1,8 @@
-# -- Path setup --------------------------------------------------------------
+# -- init setup --------------------------------------------------------------
 import os
 import sys
 from pathlib import Path
 from typing import Any
-
 import xyzstyle
 from sphinx.application import Sphinx
 
@@ -16,103 +15,27 @@ project = 'xyzstyle'
 copyright = '2022, xinetzone'
 author = 'xinetzone'
 
-# -- General configuration ---------------------------------------------------
-
-extensions = [
-    "sphinx.ext.napoleon",
-    "sphinx.ext.todo",
-    "sphinx.ext.viewcode",
-    # "sphinxext.rediraffe",
-    "sphinx_design",
-    "sphinx_copybutton",
-    "sphinx.ext.autodoc",
-    "sphinx.ext.autosummary",
-    "autoapi.extension",
-    # custom extentions
-    # "_extension.gallery_directive",
-    # "_extension.component_directive",
-    # For extension examples and demos
-    "myst_nb",
-    # "ablog",
-    # "jupyter_sphinx",
-    # "sphinxcontrib.youtube",
-    # "numpydoc",
-    "jupyterlite_sphinx",
-    # "sphinx_favicon",
-    "sphinxcontrib.katex",
-]
-
-jupyterlite_config = "jupyterlite_config.json"
-# suppress_warnings = ["myst.xref_missing"]
-# jupyterlite_contents = f"{ROOT}/tests/lite_contents"
-# jupyterlite_bind_ipynb_suffix = False
-# jupyterlite_dir = Path("doc/_build/html/lite")
-
-# Add any paths that contain templates here, relative to this directory.
-templates_path = ["_templates"]
-
-# List of patterns, relative to source directory, that match files and
-# directories to ignore when looking for source files.
-# This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = ["_build", "Thumbs.db", ".DS_Store", "**.ipynb_checkpoints"]
-
-# intersphinx_mapping = {
-#     'python': ('https://daobook.github.io/cpython/', None),
-#     'sphinx': ('https://daobook.github.io/sphinx/', None),
-#     'peps': ('https://daobook.github.io/peps', None),
-# }
-
-# -- Sitemap -----------------------------------------------------------------
-
-# ReadTheDocs has its own way of generating sitemaps, etc.
-if not os.environ.get("READTHEDOCS"):
-    extensions += ["sphinx_sitemap"]
-
-    html_baseurl = os.environ.get("SITEMAP_URL_BASE", "http://127.0.0.1:8000/")
-    sitemap_locales = [None]
-    sitemap_url_scheme = "{link}"
-
-# -- MyST options ------------------------------------------------------------
-
-# This allows us to use ::: to denote directives, useful for admonitions
-myst_enable_extensions = ["colon_fence", "linkify", "substitution"]
-myst_heading_anchors = 2
-myst_substitutions = {"rtd": "[Read the Docs](https://readthedocs.org/)"}
-# 如果你希望stderr和stdout中的每个输出都被合并成一个流，请使用以下配置。
-# 避免将 jupter 执行报错的信息输出到 cmd
-nb_merge_streams = True
-nb_execution_allow_errors = True
-nb_execution_mode = "cache" # 'off'
-
-# nb_mime_priority_overrides = [
-#     ('html', 'text/plain', 0),  # 最高级别
-#     ('latex', 'image/jpeg', None),  # 禁用
-#     # ('*', 'customtype', 20)
-# ]
-
 # -- Internationalization ----------------------------------------------------
-
 # specifying the natural language populates some key tags
 language = "zh_CN"
 # -- 国际化输出 ----------------------------------------------------------------
 gettext_compact = False
 locale_dirs = ['locales/']
 
-# # -- Ablog options -----------------------------------------------------------
-
-# blog_path = "examples/blog/index"
-# blog_authors = {
-#     "pydata": ("PyData", "https://pydata.org"),
-#     "jupyter": ("Jupyter", "https://jupyter.org"),
-# }
-
 # -- Options for HTML output -------------------------------------------------
-
 html_theme = "xyzstyle"
 html_logo = "_static/images/logo.jpg"
 html_favicon = "_static/images/favicon.jpg"
 html_sourcelink_suffix = ""
 html_last_updated_fmt = '%Y-%m-%d, %H:%M:%S'  # to reveal the build date in the pages meta
+
+# Add any paths that contain custom static files (such as style sheets) here,
+# relative to this directory. They are copied after the builtin static files,
+# so a file named "default.css" will overwrite the builtin "default.css".
+html_static_path = ["_static"]
+html_css_files = ["custom.css", "try_examples.css"]
+# html_js_files = ["custom-icon.js"]
+todo_include_todos = True
 
 # Napoleon 设置
 napoleon_google_docstring = True
@@ -130,10 +53,60 @@ napoleon_preprocess_types = True
 napoleon_type_aliases = None
 napoleon_attr_annotations = True
 
-# ``pydata-sphinx-theme`` 配置
+# -- General configuration ---------------------------------------------------
+# Add any paths that contain templates here, relative to this directory.
+templates_path = ["_templates"]
+# List of patterns, relative to source directory, that match files and
+# directories to ignore when looking for source files.
+# This pattern also affects html_static_path and html_extra_path.
+exclude_patterns = ["_build", "Thumbs.db", ".DS_Store", "**.ipynb_checkpoints"]
+# intersphinx_mapping = {
+#     'python': ('https://daobook.github.io/cpython/', None),
+#     'sphinx': ('https://daobook.github.io/sphinx/', None),
+#     'peps': ('https://daobook.github.io/peps', None),
+# }
+
+# -- Options for autoapi -------------------------------------------------------
+autoapi_type = "python"
+autoapi_dirs = ["../src/xyzstyle"]
+autoapi_keep_files = False # 要开始自己编写 API 文档，你可以让 AutoAPI 保留其生成的文件作为基础
+autoapi_root = "api"
+autoapi_member_order = "groupwise"
+
+extensions = [
+    "xyzstyle",
+    "myst_nb",
+    "jupyterlite_sphinx",
+    "sphinx.ext.napoleon",
+    "sphinx.ext.todo",
+    "autoapi.extension",
+    "sphinx_design",
+    "sphinx_copybutton",
+    "sphinx.ext.viewcode",
+    "sphinx_thebe",
+    # # "sphinxext.rediraffe",
+    # "sphinx.ext.autodoc",
+    # "sphinx.ext.autosummary",
+    # # custom extentions
+    # # "_extension.gallery_directive",
+    # # "_extension.component_directive",
+    # # For extension examples and demos
+    # # "ablog",
+    # # "jupyter_sphinx",
+    # # "sphinxcontrib.youtube",
+    # # "numpydoc",
+    # # "sphinx_favicon",
+    # "sphinxcontrib.katex",
+]
 # Define the json_url for our version switcher.
 json_url = 'https://xinetzone.github.io/xyzstyle/_static/switcher.json'
-
+# -- Sitemap -----------------------------------------------------------------
+# ReadTheDocs has its own way of generating sitemaps, etc.
+if not os.environ.get("READTHEDOCS"):
+    extensions += ["sphinx_sitemap"]
+    html_baseurl = os.environ.get("SITEMAP_URL_BASE", "http://127.0.0.1:8000/")
+    sitemap_locales = [None]
+    sitemap_url_scheme = "{link}"
 # Define the version we use for matching in the version switcher.
 version_match = os.environ.get("READTHEDOCS_VERSION")
 release = xyzstyle.__version__
@@ -152,150 +125,6 @@ if not version_match or version_match.isdigit() or version_match == "latest":
 elif version_match == "stable":
     version_match = f"v{release}"
 
-html_theme_options = {
-    "navigation_with_keys": True,
-    "github_url": "https://github.com/xinetzone/xyzstyle",
-    "collapse_navigation": True,
-    # "external_links": [
-    #     {
-    #         "url": "https://pydata.org",
-    #         "name": "PyData",
-    #     },
-    #     {
-    #         "url": "https://numfocus.org/",
-    #         "name": "NumFocus",
-    #     },
-    #     {
-    #         "url": "https://numfocus.org/donate",
-    #         "name": "Donate to NumFocus",
-    #     },
-    # ],
-    "header_links_before_dropdown": 4,
-    "icon_links": [
-        # {
-        #     "name": "GitHub",
-        #     "url": "https://github.com/xinetzone/tvm-book",
-        #     "icon": "fa-brands fa-square-github",
-        #     "type": "fontawesome",
-        # },
-        {
-            "name": "知乎",
-            "url": "https://www.zhihu.com/people/xinetzone",
-            "icon": "fa-brands fa-zhihu",
-            "type": "fontawesome",
-        },
-        {
-            "name": "简书",
-            "url": "https://www.jianshu.com/u/4302480a3e8e",
-            "icon": "fa-solid fa-book",
-            "type": "fontawesome",
-        },
-        {
-            "name": "B站",
-            "url": "https://space.bilibili.com/252192181",
-            "icon": "fa-brands fa-bilibili",
-            "type": "fontawesome",
-        },
-        {
-            "name": "博客园",
-            "url": "https://www.cnblogs.com/q735613050/",
-            "icon": "https://xinetzone.github.io/xinetzone/media/xinetzone.jpg",
-            "type": "url",
-        },
-        {
-            "name": "领英",
-            "url": "https://www.linkedin.com/in/xinet",
-            "icon": "fa-brands fa-linkedin",
-            "type": "fontawesome",
-        },
-        # {
-        #     "name": "GitLab",
-        #     "url": "https://gitlab.com/<your-org>/<your-repo>",
-        #     "icon": "fa-brands fa-square-gitlab",
-        #     "type": "fontawesome",
-        # },
-        # {
-        #     "name": "Twitter",
-        #     "url": "https://twitter.com/<your-handle>",
-        #     "icon": "fa-brands fa-square-twitter",
-        #     # The default for `type` is `fontawesome` so it is not actually required in any of the above examples as it is shown here
-        # },
-        # {
-        #     "name": "Mastodon",
-        #     "url": "https://<your-host>@<your-handle>",
-        #     "icon": "fa-brands fa-mastodon",
-        # },
-        # {
-        #     "name": "PyData",
-        #     "url": "https://pydata.org",
-        #     "icon": "_static/pydata-logo.png",
-        #     "type": "local",
-        #     "attributes": {"target": "_blank"},
-        # },
-    ],
-    # alternative way to set twitter and github header icons
-    # "github_url": "https://github.com/pydata/pydata-sphinx-theme",
-    # "twitter_url": "https://twitter.com/PyData",
-    # "logo": {
-    #     "text": "xyzstyle Theme",
-    #     "image_dark": "_static/logo-dark.svg",
-    # },
-    "use_edit_page_button": True,
-    "show_toc_level": 1,
-    "navbar_align": "left",  # [left, content, right] For testing that the navbar items align properly
-    # # "show_nav_level": 2,
-    # "announcement": "https://raw.githubusercontent.com/pydata/pydata-sphinx-theme/main/docs/_templates/custom-template.html",
-    # "show_version_warning_banner": True,
-    "navbar_center": ["version-switcher", "navbar-nav"],
-    # "navbar_start": ["navbar-logo"],
-    # "navbar_end": ["theme-switcher", "navbar-icon-links"],
-    # "navbar_persistent": ["search-button"],
-    # "primary_sidebar_end": ["custom-template", "sidebar-ethical-ads"],
-    # "article_footer_items": ["test", "test"],
-    # "content_footer_items": ["test", "test"],
-    "footer_start": ["copyright"],
-    "footer_center": ["sphinx-version"],
-    "secondary_sidebar_items": {
-        "**/*": ["page-toc", "edit-this-page", "sourcelink"],
-        "examples/no-sidebar": [],
-    },
-    "switcher": {
-        "json_url": json_url,
-        "version_match": version_match,
-    },
-    # "back_to_top_button": False,
-}
-
-html_sidebars = {
-    "contribute/index": [
-        "search-field",
-        "sidebar-nav-bs",
-        "custom-template",
-    ],  # This ensures we test for custom sidebars
-    "demo/no-sidebar": [],  # Test what page looks like with no sidebar items
-}
-
-# _html_sidebars = {
-#     "community/index": [
-#         "sidebar-nav-bs",
-#         "custom-template",
-#     ],  # This ensures we test for custom sidebars
-#     "examples/no-sidebar": [],  # Test what page looks like with no sidebar items
-#     "examples/persistent-search-field": ["search-field"],
-#     # Blog sidebars
-#     # ref: https://ablog.readthedocs.io/manual/ablog-configuration-options/#blog-sidebars
-#     "examples/blog/*": [
-#         "ablog/postcard.html",
-#         "ablog/recentposts.html",
-#         "ablog/tagcloud.html",
-#         "ablog/categories.html",
-#         "ablog/authors.html",
-#         "ablog/languages.html",
-#         "ablog/locations.html",
-#         "ablog/archives.html",
-#     ],
-# }
-
 html_context = {
     "github_user": "xinetzone",
     "github_repo": "xyzstyle",
@@ -303,99 +132,116 @@ html_context = {
     "doc_path": "doc",
 }
 
-# rediraffe_redirects = {
-#     "contributing.rst": "community/index.rst",
+thebe_config = {
+    "repository_url": "https://github.com/xinetzone/xyzstyle",
+    "path_to_docs": "doc",
+    "repository_branch": "main",
+    "selector": "div.highlight",
+    # "selector": ".thebe",
+    # "selector_input": "",
+    # "selector_output": "",
+    # "codemirror-theme": "blackboard",  # Doesn't currently work
+    # "always_load": True,  # To load thebe on every page
+}
+
+html_theme_options = {
+    "path_to_docs": "doc",
+    "repository_url": "https://github.com/xinetzone/xyzstyle",
+    "repository_branch": "main",
+    "launch_buttons": {
+        "binderhub_url": "https://mybinder.org",
+        "colab_url": "https://colab.research.google.com/",
+        "deepnote_url": "https://deepnote.com/",
+        "notebook_interface": "jupyterlab",
+        "thebe": True,
+        # "jupyterhub_url": "https://datahub.berkeley.edu",  # For testing
+    },
+    "use_edit_page_button": True,
+    "use_source_button": True,
+    "use_issues_button": True,
+    # "use_repository_button": True,
+    "use_download_button": True,
+    "use_sidenotes": True,
+    "show_toc_level": 2,
+    "announcement": (
+        "⚠️The latest release refactored our HTML, "
+        "so double-check your custom CSS rules!⚠️"
+    ),
+}
+
+# html_theme_options = {
+#     "launch_buttons": {
+#         "binderhub_url": "https://mybinder.org",
+#         "colab_url": "https://colab.research.google.com/",
+#         "deepnote_url": "https://deepnote.com/",
+#         "notebook_interface": "jupyterlab",
+#         "thebe": True,
+#         # "jupyterhub_url": "https://datahub.berkeley.edu",  # For testing
+#     },
 # }
 
-# Add any paths that contain custom static files (such as style sheets) here,
-# relative to this directory. They are copied after the builtin static files,
-# so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ["_static"]
-html_css_files = ["custom.css", "try_examples.css"]
-# html_js_files = ["custom-icon.js"]
-todo_include_todos = True
-
-# -- favicon options ---------------------------------------------------------
-
-# # see https://sphinx-favicon.readthedocs.io for more information about the
-# # sphinx-favicon extension
-# favicons = [
-#     # generic icons compatible with most browsers
-#     "favicon-32x32.png",
-#     "favicon-16x16.png",
-#     {"rel": "shortcut icon", "sizes": "any", "href": "favicon.ico"},
-#     # chrome specific
-#     "android-chrome-192x192.png",
-#     # apple icons
-#     {"rel": "mask-icon", "color": "#459db9", "href": "safari-pinned-tab.svg"},
-#     {"rel": "apple-touch-icon", "href": "apple-touch-icon.png"},
-#     # msapplications
-#     {"name": "msapplication-TileColor", "content": "#459db9"},
-#     {"name": "theme-color", "content": "#ffffff"},
-#     {"name": "msapplication-TileImage", "content": "mstile-150x150.png"},
-# ]
-
-# -- Options for autosummary/autodoc output ------------------------------------
-autosummary_generate = True
-autodoc_typehints = "description"
-autodoc_member_order = "groupwise"
-
-# -- Options for autoapi -------------------------------------------------------
-autoapi_type = "python"
-autoapi_dirs = ["../src/xyzstyle"]
-autoapi_keep_files = False # 要开始自己编写 API 文档，你可以让 AutoAPI 保留其生成的文件作为基础
-autoapi_root = "api"
-autoapi_member_order = "groupwise"
-
-# -- Options for LaTeX output --------------------------------------------------
-latex_engine = "xelatex"
-
-# Katex
-katex_prerender = True
-katex_css_path = \
-    'https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css'
-katex_js_path = 'katex.min.js'
-katex_autorender_path = 'auto-render.min.js'
-katex_inline = [r'\(', r'\)']
-katex_display = [r'\[', r'\]']
-katex_prerender = False
-katex_options = r'''{
-    displayMode: true,
-    macros: {
-        "\\RR": "\\mathbb{R}",
-        "\\i": "\\mathrm{i}",
-        "\\e": "\\mathrm{e}^{#1}",
-        "\\vec": "\\mathbf{#1}",
-        "\\x": "\\vec{x}",
-        "\\d": "\\operatorname{d}\\!{}",
-        "\\dirac": "\\operatorname{\\delta}\\left(#1\\right)",
-        "\\scalarprod": "\\left\\langle#1,#2\\right\\rangle",
-    }
-}'''
-
-# -- application setup -------------------------------------------------------
-
-
-def setup_to_main(
-    app: Sphinx, pagename: str, templatename: str, context, doctree
-) -> None:
-    """Add a function that jinja can access for returning an "edit this page" link pointing to `main`."""
-
-    def to_main(link: str) -> str:
-        """Transform "edit on github" links and make sure they always point to the main branch.
-
-        Args:
-            link: the link to the github edit interface
-
-        Returns:
-            the link to the tip of the main branch for the same file
-        """
-        links = link.split("/")
-        idx = links.index("edit")
-        return "/".join(links[: idx + 1]) + "/main/" + "/".join(links[idx + 2 :])
-
-    context["to_main"] = to_main
-
+html_theme_options["icon_links"] = [
+    # {
+    #     "name": "GitHub",
+    #     "url": "https://github.com/xinetzone/tvm-book",
+    #     "icon": "fa-brands fa-square-github",
+    #     "type": "fontawesome",
+    # },
+    {
+        "name": "知乎",
+        "url": "https://www.zhihu.com/people/xinetzone",
+        "icon": "fa-brands fa-zhihu",
+        "type": "fontawesome",
+    },
+    {
+        "name": "简书",
+        "url": "https://www.jianshu.com/u/4302480a3e8e",
+        "icon": "fa-solid fa-book",
+        "type": "fontawesome",
+    },
+    {
+        "name": "B站",
+        "url": "https://space.bilibili.com/252192181",
+        "icon": "fa-brands fa-bilibili",
+        "type": "fontawesome",
+    },
+    {
+        "name": "博客园",
+        "url": "https://www.cnblogs.com/q735613050/",
+        "icon": "https://xinetzone.github.io/xinetzone/media/xinetzone.jpg",
+        "type": "url",
+    },
+    {
+        "name": "领英",
+        "url": "https://www.linkedin.com/in/xinet",
+        "icon": "fa-brands fa-linkedin",
+        "type": "fontawesome",
+    },
+    # {
+    #     "name": "GitLab",
+    #     "url": "https://gitlab.com/<your-org>/<your-repo>",
+    #     "icon": "fa-brands fa-square-gitlab",
+    #     "type": "fontawesome",
+    # },
+    # {
+    #     "name": "Twitter",
+    #     "url": "https://twitter.com/<your-handle>",
+    #     "icon": "fa-brands fa-square-twitter",
+    #     # The default for `type` is `fontawesome` so it is not actually required in any of the above examples as it is shown here
+    # },
+    # {
+    #     "name": "Mastodon",
+    #     "url": "https://<your-host>@<your-handle>",
+    #     "icon": "fa-brands fa-mastodon",
+    # },
+    # {
+    #     "name": "PyData",
+    #     "url": "https://pydata.org",
+    #     "icon": "_static/pydata-logo.png",
+    #     "type": "local",
+    #     "attributes": {"target": "_blank"},
+    # },
+]
 
 def setup(app: Sphinx) -> dict[str, Any]:
     """Add custom configuration to sphinx app.
@@ -405,7 +251,7 @@ def setup(app: Sphinx) -> dict[str, Any]:
     Returns:
         the 2 parallel parameters set to ``True``.
     """
-    app.connect("html-page-context", setup_to_main)
+    # app.connect("html-page-context", setup_to_main)
     app.add_object_type('confval', 'confval',
                         objname='configuration value',
                         indextemplate='pair: %s; configuration value')
