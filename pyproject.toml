@@ -33,6 +33,7 @@ Home = "https://github.com/xinetzone/xyzstyle"
 
 [project.optional-dependencies]
 doc = [
+  "invoke",
   "myst-nb",
   "sphinx==7.2.5",
   "sphinxext-rediraffe",
