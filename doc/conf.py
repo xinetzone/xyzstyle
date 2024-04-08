@@ -144,6 +144,12 @@ thebe_config = {
     # "always_load": True,  # To load thebe on every page
 }
 
+# application/vnd.plotly.v1+json and application/vnd.bokehjs_load.v0+json
+# unknown_mime_type - application/vnd.plotly.v1+json and application/vnd.bokehjs_load.v0+json
+# domains - sphinx_proof.domain::prf needs to have `resolve_any_xref` method
+# mime_priority - latex priority not set in myst_nb for text/html, application/javascript
+suppress_warnings = ["mystnb.unknown_mime_type", "myst.domains", "mystnb.mime_priority"]
+
 html_theme_options = {
     "path_to_docs": "doc",
     "repository_url": "https://github.com/xinetzone/xyzstyle",
