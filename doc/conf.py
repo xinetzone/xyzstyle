@@ -148,7 +148,11 @@ thebe_config = {
 # unknown_mime_type - application/vnd.plotly.v1+json and application/vnd.bokehjs_load.v0+json
 # domains - sphinx_proof.domain::prf needs to have `resolve_any_xref` method
 # mime_priority - latex priority not set in myst_nb for text/html, application/javascript
-suppress_warnings = ["mystnb.unknown_mime_type", "myst.domains", "mystnb.mime_priority"]
+suppress_warnings = [
+    "mystnb.unknown_mime_type", "mystnb.mime_priority",  # 禁用 application/vnd.plotly.v1+json and application/vnd.bokehjs_load.v0+json 警告
+    "myst.xref_missing", "myst.domains", # 禁用 myst 警告
+    "autoapi.python_import_resolution", "autoapi.not_readable" # 禁用 autoapi 警告
+]
 
 html_theme_options = {
     "path_to_docs": "doc",
