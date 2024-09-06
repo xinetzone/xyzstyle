@@ -39,12 +39,12 @@ extensions = [
     # "jupyter_sphinx",
     # "sphinxcontrib.youtube",
     # "numpydoc",
-    "jupyterlite_sphinx",
+    # "jupyterlite_sphinx",
     # "sphinx_favicon",
     "sphinxcontrib.katex",
 ]
 
-jupyterlite_config = "jupyterlite_config.json"
+# jupyterlite_config = "jupyterlite_config.json"
 # suppress_warnings = ["myst.xref_missing"]
 # jupyterlite_contents = f"{ROOT}/tests/lite_contents"
 # jupyterlite_bind_ipynb_suffix = False

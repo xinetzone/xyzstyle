@@ -76,7 +76,7 @@ autoapi_member_order = "groupwise"
 extensions = [
     "xyzstyle",
     "myst_nb",
-    "jupyterlite_sphinx",
+    # "jupyterlite_sphinx",
     "sphinx.ext.napoleon",
     "sphinx.ext.todo",
     "autoapi.extension",

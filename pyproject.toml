@@ -51,6 +51,7 @@ doc = [
   "sphinx-sitemap",
   "sphinxcontrib-katex",
   "sphinx-thebe",
+  "libarchive-c",
 ]
 
 coverage = [
