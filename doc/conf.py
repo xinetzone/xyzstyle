@@ -172,26 +172,52 @@ html_theme_options = {
     # "use_repository_button": True,
     "use_download_button": True,
     "use_sidenotes": True,
-    "show_toc_level": 2,
+    "show_toc_level": 5,
     "announcement": (
-        "⚠️The latest release refactored our HTML, "
-        "so double-check your custom CSS rules!⚠️"
+        "⚠️欢迎进入编程视界！⚠️"
     ),
     "navigation_with_keys": True,
     "switcher": {
         "json_url": json_url,
         "version_match": version_match,
     },
-    "collapse_navigation": False,
-    "navbar_align": "content",  # "right", "left", "content"
-    # "navbar_start": "navbar-logo.html",
-    "navbar_center": "navbar-nav.html",
-    "navbar_end": ["theme-switcher", "version-switcher", "navbar-icon-links"],
-    # "secondary_sidebar_items": ["page-toc.html", "edit-this-page.html"],
-    "footer_start": ["copyright", "sphinx-version"],
-    "footer_end": ["last-updated", ],
+    "collapse_navigation": True,
+    # "navbar_start": ["test.html"],
+    # "navbar_center": ["test.html"],
+    # "navbar_end": ["test.html"],
+    # "navbar_persistent": ["test.html"],
+    # "secondary_sidebar_items": {
+    #     "**/*": ["page-toc", "edit-this-page", "sourcelink", ],
+    #     "examples/no-sidebar": [],
+    # },
+    # "primary_sidebar_end": ["sidebar-ethical-ads", ],
+    # "article_footer_items": ["test", "test"],
+    # "content_footer_items": ["test", "test"],
+    "footer_start": ["version-switcher", "copyright"],
+    "footer_end": ["sphinx-version", "last-updated"],
 }
 
+html_sidebars = {
+    # "**/*": ["search-field", "sbt-sidebar-nav.html", "version-switcher", "sidebar-nav-bs",],
+    "community/index": [
+        "sidebar-nav-bs",
+        "custom-template",
+    ],  # This ensures we test for custom sidebars
+    "examples/no-sidebar": [],  # Test what page looks like with no sidebar items
+    "examples/persistent-search-field": ["search-field"],
+    # Blog sidebars
+    # ref: https://ablog.readthedocs.io/manual/ablog-configuration-options/#blog-sidebars
+    "examples/blog/*": [
+        "ablog/postcard.html",
+        "ablog/recentposts.html",
+        "ablog/tagcloud.html",
+        "ablog/categories.html",
+        "ablog/authors.html",
+        "ablog/languages.html",
+        "ablog/locations.html",
+        "ablog/archives.html",
+    ],
+}
 # html_theme_options = {
 #     "launch_buttons": {
 #         "binderhub_url": "https://mybinder.org",
