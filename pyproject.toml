@@ -35,7 +35,7 @@ Home = "https://github.com/xinetzone/xyzstyle"
 doc = [
   "invoke",
   "myst-nb",
-  "sphinx==7.2.5",
+  "sphinx",
   "sphinxext-rediraffe",
   "sphinx-copybutton",
   "sphinx_design",
@@ -48,7 +48,6 @@ doc = [
   "jupyterlab_server",
   "sphinx-autoapi",
   "linkify-it-py",
-  # "jupyter-sphinx",
   "sphinx-sitemap",
   "sphinxcontrib-katex",
   "sphinx-thebe",
