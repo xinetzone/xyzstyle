@@ -5,7 +5,7 @@ from pathlib import Path
 from typing import Any
 import xyzstyle
 from sphinx.application import Sphinx
-
+os.environ["PYDEVD_DISABLE_FILE_VALIDATION"] = "1"
 ROOT = Path('__file__').resolve().parents[1]
 sys.path.extend([str(Path(".").resolve()), str(ROOT/'src')])
 from utils.icon import icon_links
@@ -60,7 +60,12 @@ templates_path = ["_templates"]
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = ["_build", "Thumbs.db", ".DS_Store", "**.ipynb_checkpoints"]
+exclude_patterns = [
+    "_build", "Thumbs.db", ".DS_Store", 
+    "**.ipynb_checkpoints",
+]
+jupyter_execute_notebooks = "off"
+execution_excludepatterns = ["ipywidgets/**"]
 # intersphinx_mapping = {
 #     'python': ('https://daobook.github.io/cpython/', None),
 #     'sphinx': ('https://daobook.github.io/sphinx/', None),
@@ -85,6 +90,7 @@ extensions = [
     "sphinx_copybutton",
     "sphinx.ext.viewcode",
     "sphinx_thebe",
+    # "jupyterlite_sphinx",
     # # "sphinxext.rediraffe",
     # "sphinx.ext.autodoc",
     # "sphinx.ext.autosummary",
@@ -230,6 +236,11 @@ html_sidebars = {
 #         # "jupyterhub_url": "https://datahub.berkeley.edu",  # For testing
 #     },
 # }
+
+# # jupyterlite_dir = ROOT/"tools/lite/apps"
+# jupyterlite_contents = "../tests"
+# jupyterlite_bind_ipynb_suffix = False
+# jupyterlite_config = "jupyterlite_config.json"
 
 def setup(app: Sphinx) -> dict[str, Any]:
     """Add custom configuration to sphinx app.

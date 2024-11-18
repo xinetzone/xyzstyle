@@ -52,6 +52,10 @@ doc = [
   "sphinxcontrib-katex",
   "sphinx-thebe",
   "libarchive-c",
+  "jupyterlite-sphinx",
+  "jupyterlite-pyodide-kernel",
+  "jupyterlite-xeus",
+  "voici",
 ]
 
 coverage = [
