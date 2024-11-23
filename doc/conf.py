@@ -64,8 +64,9 @@ exclude_patterns = [
     "_build", "Thumbs.db", ".DS_Store", 
     "**.ipynb_checkpoints",
 ]
-jupyter_execute_notebooks = "off"
-execution_excludepatterns = ["ipywidgets/**"]
+# 参考 https://myst-nb.readthedocs.io/en/latest/computation/execute.html
+nb_execution_mode = "auto" # "off", "auto", "force", "cache", "inline"
+nb_execution_excludepatterns = ["ipywidgets/**/*.ipynb", "ipywidgets/**/**/*.ipynb"]
 # intersphinx_mapping = {
 #     'python': ('https://daobook.github.io/cpython/', None),
 #     'sphinx': ('https://daobook.github.io/sphinx/', None),

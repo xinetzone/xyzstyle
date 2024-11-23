@@ -2,7 +2,7 @@
 ```
 
 ```{toctree}
-:maxdepth: 2
+:hidden:
 
 config
 ipywidgets/index
