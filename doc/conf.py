@@ -157,6 +157,7 @@ thebe_config = {
 
 html_theme_options = {
     "path_to_docs": "doc",
+    "github_url": "https://github.com/xinetzone/xyzstyle",
     "repository_url": "https://github.com/xinetzone/xyzstyle",
     "repository_branch": "main",
     "launch_buttons": {
