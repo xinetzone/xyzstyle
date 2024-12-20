@@ -44,6 +44,9 @@ doc = [
     "sphinxcontrib-bibtex",
     "sphinxcontrib-youtube",
     "sphinxext-opengraph",
+    "sphinx-sitemap",
+    "sphinx-autoapi",
+    "graphviz",
 ]
 
 dev = [
