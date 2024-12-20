@@ -1,0 +1,9 @@
+name: jupyterlite-sphinx-dev
+channels:
+    - conda-forge
+dependencies:
+    - pip
+    - black
+    - voici
+    - pip:
+        - .[doc]
