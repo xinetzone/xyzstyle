@@ -11,14 +11,39 @@ license = {file = "LICENSE"}
 maintainers = [
   {name = "xinetzone", email = "735613050@qq.com"},
 ]
-dependencies = []
+dependencies = [
+    "sphinx-book-theme",
+    "sphinx",
+]
 
 [project.urls]
-Home = "https://github.com/xinetzone/xyzstyle"
+Repository = "https://github.com/xinetzone/xyzstyle"
+Documentation = "https://xyzstyle.readthedocs.io/"
+
+[project.entry-points."sphinx.html_themes"]
+xyzstyle = "xyzstyle"
 
 [project.optional-dependencies]
 doc = [
+    "ablog",
+    "ipywidgets",
+    "folium",
+    "numpy",
+    "matplotlib",
+    "numpydoc",
     "myst-nb",
+    "nbclient",
+    "pandas",
+    "plotly",
+    "sphinx-design",
+    "sphinx-examples",
+    "sphinx-copybutton",
+    "sphinx-tabs",
+    "sphinx-togglebutton",
+    "sphinx-thebe",
+    "sphinxcontrib-bibtex",
+    "sphinxcontrib-youtube",
+    "sphinxext-opengraph",
 ]
 
 dev = [

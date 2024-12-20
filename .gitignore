@@ -149,6 +149,7 @@ _contents/
 
 # PDM
 .pdm-python
+.pdm-build/
 
 # temp
 .temp/
