@@ -35,7 +35,7 @@
 [install-badge]: https://img.shields.io/pypi/dw/xyzstyle?label=pypi%20installs
 [install-link]: https://pypistats.org/packages/xyzstyle
 [status-badge]: https://readthedocs.org/projects/xyzstyle/badge/?version=latest
-[status-link]: https://xyzstyle.readthedocs.io/zh/latest/?badge=latest
+[status-link]: https://xyzstyle.readthedocs.io/zh-cn/latest/?badge=latest
 [download-badge]: https://pepy.tech/badge/xyzstyle
 [download-link]: https://pepy.tech/project/xyzstyle
 

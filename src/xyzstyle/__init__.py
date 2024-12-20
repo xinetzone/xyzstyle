@@ -1,4 +1,5 @@
 from pathlib import Path
+from sphinx.util.typing import ExtensionMetadata
 from sphinx.application import Sphinx
 
 
@@ -9,7 +10,7 @@ def get_html_theme_path():
     return theme_path
 
 
-def setup(app: Sphinx):
+def setup(app: Sphinx) -> ExtensionMetadata:
     theme_dir = get_html_theme_path()
     app.add_html_theme("xyzstyle", theme_dir)
 

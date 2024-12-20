@@ -237,7 +237,7 @@ copybutton_selector = ":not(.prompt) > div.highlight pre"
 # -- ABlog config -------------------------------------------------
 blog_path = "reference/blog"
 blog_post_pattern = "reference/blog/*.md"
-blog_baseurl = "https://sphinx-book-theme.readthedocs.io"
+blog_baseurl = "https://xyzstyle.readthedocs.io/zh-cn/latest/"
 fontawesome_included = True
 post_auto_image = 1
 post_auto_excerpt = 2
