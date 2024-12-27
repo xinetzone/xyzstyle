@@ -17,7 +17,7 @@ author = 'xinetzone' # 作者信息
 # == 国际化输出 ==========================================================================
 language = 'zh_CN'
 locale_dirs = ['../locales/']  # po files will be created in this directory
-# gettext_compact = False  # optional: avoid file concatenation in sub directories.
+gettext_compact = False  # optional: avoid file concatenation in sub directories.
 
 # == 通用配置 ============================================================================
 # 表示 Sphinx 扩展的模块名称的字符串列表。它们可以是
@@ -45,6 +45,7 @@ exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 intersphinx_mapping = {
     "python": ("https://docs.python.org/3.12", None),
     "sphinx": ("https://daobook.github.io/sphinx/", None),
+    # "sphinx": ("https://www.sphinx-doc.org/zh-cn/master/", None),
     "pst": ("https://daobook.github.io/pydata-sphinx-theme/", None),
     "sbt": ("https://daobook.github.io/sphinx-book-theme/", None),
     "myst-nb": ("https://daobook.github.io/MyST-NB/", None),
@@ -69,7 +70,7 @@ html_title = "Sphinx xyzstyle Theme"
 html_static_path = ['_static']
 html_logo = "_static/images/logo.jpg" 
 html_favicon = "_static/images/favicon.jpg"
-html_css_files = ["css/custom.css"]
+html_css_files = ["css/custom.css", "css/tippy.css"]
 html_last_updated_fmt = '%Y-%m-%d, %H:%M:%S'
 
 # == 主题选项 ===========================================================================
@@ -100,6 +101,10 @@ comments_config = {
 }
 
 # ===================== 可选 ==========================================================
+# 用户可以使用 BibTeX 格式的参考文献数据库，并在文档中插入引用和生成参考文献列表。
+# -------------------------------------------------------------------------------------
+extensions.append('sphinxcontrib.bibtex')
+bibtex_bibfiles = ['refs.bib']
 # 自动生成 API 文档的路径
 # -------------------------------------------------------------------------------------
 extensions.append("autoapi.extension")
@@ -163,6 +168,24 @@ if not os.environ.get("READTHEDOCS"):
 elif os.environ.get("GITHUB_ACTIONS"):
     html_baseurl = os.environ.get("SITEMAP_URL_BASE", "https://xinetzone.github.io/")
 sitemap_locales = [None] # 语言列表
+
+# 展示丰富的悬停提示
+# -------------------------------------------------------------------------------------
+extensions.append("sphinx_tippy")
+# tippy_enable_mathjax = True
+# tippy_anchor_parent_selector = "div.content"
+# tippy_logo_svg = Path("tippy-logo.svg").read_text("utf8")
+# tippy_custom_tips = {
+#     "https://example.com": "<p>This is a custom tip for <a>example.com</a></p>",
+#     "https://atomiks.github.io/tippyjs": (
+#         f"{tippy_logo_svg}<p>Using Tippy.js, the complete tooltip, popover, dropdown, "
+#         "and menu solution for the web, powered by Popper.</p>"
+#     ),
+# }
+tippy_rtd_urls = [
+    "https://docs.readthedocs.io/en/stable/",
+    "https://www.sphinx-doc.org/zh-cn/master/",
+]
 
 # 其他配置
 # -------------------------------------------------------------------------------------
