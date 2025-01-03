@@ -1,4 +1,4 @@
-# Sphinx 配置
+# 配置
 
 ```{toctree}
 base
