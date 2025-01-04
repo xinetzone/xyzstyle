@@ -33,7 +33,7 @@ extensions = [
     "sphinx_examples", # 为 Sphinx 文档添加示例功能。
     "sphinx.ext.napoleon", # 支持 Google 和 Numpy 风格的文档字符串
     # "sphinxcontrib.bibtex", # 为 Sphinx 文档添加参考文献功能。
-    "_ext.gallery_directive",
+    "_ext.gallery_directive", # 自定义画廊指令
 ]
 
 # 相对于源目录的模式列表，用于匹配在查找源文件时要忽略的文件和目录。
