@@ -24,7 +24,7 @@ xyzstyle = "xyzstyle"
 
 [project.optional-dependencies]
 doc = [
-    "sphinx==8.1.3",
+    "sphinx",
     "ablog",
     "ipywidgets",
     # "folium",
@@ -43,7 +43,7 @@ doc = [
     "sphinxcontrib-bibtex",
     "sphinxext-opengraph",
     "sphinx-sitemap",
-    "sphinx-autoapi",
+    "sphinx-autoapi>=3.4",
     "graphviz",
     "sphinx-tippy",
 ]
