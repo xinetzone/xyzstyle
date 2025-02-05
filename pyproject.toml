@@ -1,6 +1,6 @@
 [project]
 name = "xyzstyle"
-version = "0.1.0"
+version = "0.1.1"
 description = "xyzstyle 主题"
 authors = [
     {name = "xinetzone", email = "735613050@qq.com"},
@@ -27,7 +27,7 @@ doc = [
     "sphinx",
     "ablog",
     "ipywidgets",
-    "folium",
+    # "folium",
     "numpy",
     "matplotlib",
     "sphinx-comments",

@@ -6,8 +6,7 @@ from sphinx.application import Sphinx
 def get_html_theme_path():
     """Return list of HTML theme paths."""
     parent = Path(__file__).parent.resolve()
-    theme_path = parent / "theme" / "xyzstyle"
-    return theme_path
+    return f"{parent}/theme/xyzstyle"
 
 
 def setup(app: Sphinx) -> ExtensionMetadata:
