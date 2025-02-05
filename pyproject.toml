@@ -13,7 +13,6 @@ maintainers = [
 ]
 dependencies = [
     "sphinx-book-theme",
-    "sphinx",
 ]
 
 [project.urls]
@@ -25,6 +24,7 @@ xyzstyle = "xyzstyle"
 
 [project.optional-dependencies]
 doc = [
+    "sphinx",
     "ablog",
     "ipywidgets",
     "folium",
