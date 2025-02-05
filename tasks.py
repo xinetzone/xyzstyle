@@ -5,4 +5,4 @@ if not hasattr(inspect, 'getargspec'): # 修复
     
 from taolib.flows.tasks import sites
 
-namespace = sites('doc', target='doc/_build/html')
+namespace = sites('./doc', target='./doc/_build/html')

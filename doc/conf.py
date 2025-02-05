@@ -109,7 +109,8 @@ bibtex_bibfiles = ['refs.bib']
 # 自动生成 API 文档的路径
 # -------------------------------------------------------------------------------------
 extensions.append("autoapi.extension")
-autoapi_dirs = [f"../src/{project}"]
+autoapi_dirs = [f"../src/"]
+autoapi_root = "autoapi"
 # 在文档中嵌入 Graphviz 图
 # -------------------------------------------------------------------------------------
 extensions.append("sphinx.ext.graphviz")
