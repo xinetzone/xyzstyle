@@ -111,6 +111,7 @@ bibtex_bibfiles = ['refs.bib']
 extensions.append("autoapi.extension")
 autoapi_dirs = [f"../src/"]
 autoapi_root = "autoapi"
+autoapi_generate_api_docs = False
 # 在文档中嵌入 Graphviz 图
 # -------------------------------------------------------------------------------------
 extensions.append("sphinx.ext.graphviz")
