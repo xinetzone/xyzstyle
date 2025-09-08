@@ -48,6 +48,40 @@ nosetests.xml
 coverage.xml
 *.cover
 *.py,cover
+
+# Sphinx documentation
+_doc/
+_build/
+
+# IDE directories and files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Environment files
+.env
+.venv
+venv/
+
+# OS generated files
+Thumbs.db
+.DS_Store
+
+# Temporary files
+*.tmp
+*.temp
+.temp/
+.tmp/
+
+# Log files
+*.log
+logs/
+
+# Local configuration files
+*.local
+*.ini.local
 .hypothesis/
 .pytest_cache/
 
