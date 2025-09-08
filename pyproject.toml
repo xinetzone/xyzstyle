@@ -1,0 +1,61 @@
+[project]
+name = "xyzstyle"
+version = "0.1.1"
+description = "xyzstyle 主题"
+authors = [
+    {name = "xinetzone", email = "735613050@qq.com"},
+]
+requires-python = ">=3.10"
+readme = "README.md"
+license = {file = "LICENSE"}
+maintainers = [
+  {name = "xinetzone", email = "735613050@qq.com"},
+]
+dependencies = [
+    "sphinx-book-theme",
+]
+
+[project.urls]
+Repository = "https://github.com/xinetzone/xyzstyle"
+Documentation = "https://xyzstyle.readthedocs.io/"
+
+[project.entry-points."sphinx.html_themes"]
+xyzstyle = "xyzstyle"
+
+[project.optional-dependencies]
+doc = [
+    "sphinx",
+    "ablog",
+    "ipywidgets",
+    # "folium",
+    "numpy",
+    "matplotlib",
+    "sphinx-comments",
+    "myst-nb",
+    "nbclient",
+    "pandas",
+    "plotly",
+    "sphinx-design",
+    "sphinx-examples",
+    "sphinx-copybutton",
+    "sphinx-contributors",
+    "sphinx-thebe",
+    "sphinxcontrib-bibtex",
+    "sphinxext-opengraph",
+    "sphinx-sitemap",
+    "sphinx-autoapi>=3.4",
+    "graphviz",
+    "sphinx-tippy",
+]
+
+dev = [
+    "taolib",
+    "invoke",
+]
+
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
+[tool.pdm]
+distribution = true
