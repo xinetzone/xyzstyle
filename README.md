@@ -152,6 +152,85 @@ comments_config = {
 }
 ```
 
+可以添加自定义图标链接，例如社交媒体图标、GitHub徽章或项目标志：
+
+```python
+# 在conf.py文件的开头添加
+from utils.links import icon_links  # 或者直接定义
+
+# 自定义图标链接
+html_theme_options.update({
+    "icon_links": [
+        {
+            "name": "GitHub",
+            "url": "https://github.com/yourusername/yourproject",
+            "icon": "fab fa-github",
+            "type": "fontawesome",
+        },
+        {
+            "name": "Twitter",
+            "url": "https://twitter.com/yourusername",
+            "icon": "fab fa-twitter",
+            "type": "fontawesome",
+        },
+        # 更多图标链接...
+    ],
+})
+```
+
+#### 启动按钮配置
+
+添加交互式代码演示启动按钮：
+
+```python
+html_theme_options.update({
+    "repository_branch": "main",
+    "launch_buttons": {
+        "binderhub_url": "https://mybinder.org",
+        "colab_url": "https://colab.research.google.com/",
+        "deepnote_url": "https://deepnote.com/",
+        "notebook_interface": "jupyterlab",
+        "thebe": True,
+    },
+})
+
+# Thebe 配置
+thebe_config = {
+    "repository_url": "https://github.com/yourusername/yourproject",
+    "repository_branch": "main",
+    "selector": "div.highlight",
+}
+```
+
+#### 自定义样式
+
+可以通过添加自定义CSS文件来覆盖默认样式：
+
+```python
+# 添加自定义CSS文件
+html_static_path = ['_static']
+html_css_files = ["css/custom.css"]
+```
+
+然后在 `_static/css/custom.css` 文件中添加自定义样式：
+
+```css
+/* 自定义公告横幅样式 */
+.announcement {
+    background-color: #4078c0;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+/* 自定义代码块样式 */
+div.highlight {
+    border-radius: 5px;
+}
+
+/* 更多自定义样式... */
+```
+
 ### 下一步
 
 配置完成后，您可以使用标准的 Sphinx 命令生成文档：

@@ -21,10 +21,42 @@ extensions = [
     "myst_nb",  # Markdown和Jupyter笔记本支持
 ] # 启用的Sphinx扩展
 
+icon_links = [
+    {
+        "name": "知乎",
+        "url": "https://www.zhihu.com/people/xinetzone",
+        "icon": "fa-brands fa-zhihu",
+        "type": "fontawesome",
+    },
+    {
+        "name": "简书",
+        "url": "https://www.jianshu.com/u/4302480a3e8e",
+        "icon": "fa-solid fa-book",
+        "type": "fontawesome",
+    },
+    {
+        "name": "B站",
+        "url": "https://space.bilibili.com/252192181",
+        "icon": "fa-brands fa-bilibili",
+        "type": "fontawesome",
+    },
+    {
+        "name": "博客园",
+        "url": "https://www.cnblogs.com/q735613050/",
+        "icon": "https://xinetzone.github.io/xinetzone/media/xinetzone.jpg",
+        "type": "url",
+    },
+    {
+        "name": "领英",
+        "url": "https://www.linkedin.com/in/xinet",
+        "icon": "fa-brands fa-linkedin",
+        "type": "fontawesome",
+    },
+]
+
 # 主题选项配置
 html_theme_options = {
-    "use_sidenotes": True,        # 启用侧边注释/页边注释
-    # "repository_url": "https://github.com/yourusername/yourproject",  # 仓库地址
+    "use_sidenotes": True,          # 启用侧边注释/页边注释
     "repository_url": "https://github.com/xinetzone/xyzstyle",  # 仓库地址
     "use_repository_button": True,  # 显示"在 GitHub 上查看"按钮
     "announcement": "欢迎使用 xyzstyle 主题！",  # 公告横幅
@@ -33,6 +65,7 @@ html_theme_options = {
     "use_edit_page_button": True,   # 显示"编辑此页"按钮
     "use_issues_button": True,      # 显示"报告问题"按钮
     "path_to_docs": "doc",          # 文档目录路径
+    "icon_links": icon_links,       # 图标链接配置
 }
 
 # 可选插件
