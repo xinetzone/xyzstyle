@@ -112,6 +112,46 @@ extensions = [
 
 通过设置 `html_theme = "xyzstyle"` 即可在您的项目中激活 `xyzstyle` 主题，使生成的文档采用该主题的样式和布局。
 
+### 其他选项
+
+```python
+# 主题选项配置
+html_theme_options = {
+    "use_sidenotes": True,        # 启用侧边注释/页边注释
+    "repository_url": "https://github.com/yourusername/yourproject",  # 仓库地址
+    "use_repository_button": True,  # 显示"在 GitHub 上查看"按钮
+    "announcement": "欢迎使用 xyzstyle 主题！",  # 公告横幅
+    "use_source_button": True,      # 显示"查看源代码"按钮
+    "use_edit_page_button": True,   # 显示"编辑此页"按钮
+    "use_issues_button": True,      # 显示"报告问题"按钮
+    "path_to_docs": "doc",          # 文档目录路径
+}
+# 可选插件
+extensions.extend([
+    "sphinx_design",                # 增强设计元素
+    "sphinx.ext.viewcode",          # 添加到高亮源代码的链接
+    "sphinx.ext.intersphinx",       # 链接到其他文档
+    "sphinx_copybutton",            # 为代码块添加复制按钮
+    "sphinx_comments",              # 添加评论和注释功能
+])
+# =============================================================================
+# 可选功能配置
+# =============================================================================
+# 1. 代码复制按钮配置
+copybutton_exclude = '.linenos, .gp'  # 排除行号和提示符
+# 选择器配置，避免复制按钮出现在笔记本单元格编号上
+copybutton_selector = ":not(.prompt) > div.highlight pre"
+
+# 2. 评论系统配置
+comments_config = {
+   "hypothesis": True,  # 启用 Hypothesis 注释
+   "utterances": {
+      "repo": "xinetzone/xyzstyle",
+      "optional": "config",
+   }  # 启用 Utterances 评论
+}
+```
+
 ### 下一步
 
 配置完成后，您可以使用标准的 Sphinx 命令生成文档：
