@@ -61,12 +61,12 @@ repos:
 
 # 本地钩子示例
 # 可以根据项目需要添加自定义钩子
-#  - repo: local
-#    hooks:
-#      - id: pytest
-#        name: pytest
-#        entry: pytest
-#        language: system
-#        types: [python]
-#        pass_filenames: false
-#        stages: [push]
+  - repo: local
+    hooks:
+      - id: pytest
+        name: pytest
+        entry: pytest
+        language: system
+        types: [python]
+        pass_filenames: false
+        stages: [push]

@@ -38,7 +38,6 @@
 
 - **核心依赖**：
   - sphinx-book-theme>=0.4.0
-  - toml>=0.10.2
   - tomli>=2.0.1 (仅在 Python < 3.11 时需要)
 - **Python版本**：>=3.10
 
