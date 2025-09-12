@@ -1,0 +1,42 @@
+# JupyterLite Sphinx 开发环境配置
+name: jupyterlite-sphinx-dev
+
+channels:
+  - conda-forge
+
+# 指定 Python 版本确保环境一致性
+dependencies:
+  # 基础依赖
+  - python=3.10
+  - pip
+  
+  # 代码质量工具
+  - black=23.10.1
+  - isort=5.12.0
+  - flake8=6.1.0
+  - flake8-bugbear
+  
+  # 文档构建工具
+  - sphinx=7.2.6
+  - sphinx-book-theme=1.0.1
+  - myst-parser=2.0.0
+  
+  # JupyterLite 相关
+  - voici=0.4.0
+  - jupyterlite=0.1.0
+  
+  # 测试工具
+  - pytest=7.4.3
+  - pytest-cov=4.1.0
+  
+  # 使用 pip 安装的包
+  - pip:
+      # 安装当前项目及其文档依赖
+      - .[doc]
+      # 额外的文档工具
+      - sphinx-autobuild=2021.3.14
+      - sphinx-copybutton=0.5.2
+      - sphinx-design=0.5.0
+      # 代码质量相关
+      - mypy=1.5.1
+      - types-all

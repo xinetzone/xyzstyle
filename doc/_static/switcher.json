@@ -1,0 +1,12 @@
+[
+  {
+    "name": "main",
+    "version": "main",
+    "url": "https://xinetzone.github.io/xyzstyle/"
+  },
+  {
+    "name": "rtd",
+    "version": "latest",
+    "url": "https://xyzstyle.readthedocs.io/zh-cn/latest/"
+  }
+]

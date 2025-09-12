@@ -1,0 +1,8 @@
+[project]
+name = "My TOML Docs"
+author = "新伟"
+version = "1.0.0"
+
+[html]
+theme = "xyzstyle"
+static_path = ["_static"]
