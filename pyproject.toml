@@ -5,7 +5,7 @@ description = "xyzstyle 主题 - 基于 sphinx-book-theme 的现代 Sphinx 文�
 authors = [
     {name = "xinetzone", email = "735613050@qq.com"},
 ]
-requires-python = ">=3.10"
+requires-python = ">=3.12"
 readme = "README.md"
 license = {file = "LICENSE"}
 maintainers = [
@@ -13,7 +13,6 @@ maintainers = [
 ]
 dependencies = [
     "sphinx-book-theme>=0.4.0",
-    "tomli>=2.0.1; python_version < '3.11'",  # 仅在 Python < 3.11 时安装
 ]
 
 [project.urls]

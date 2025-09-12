@@ -59,10 +59,23 @@ jobs:
           cache-dependency-path: "pyproject.toml"
       
       # 安装系统依赖
-      - name: 安装系统依赖
+      # graphviz: 用于生成图表
+      # pandoc: 用于文档格式转换
+      - name: 📦 安装系统依赖
         run: |
-          sudo apt-get update
-          sudo apt-get install --fix-missing -y graphviz pandoc
+          # 非交互式更新包索引
+          sudo DEBIAN_FRONTEND=noninteractive apt-get update -y
+          # 安装必要的系统依赖，使用--fix-missing处理可能的依赖问题
+          sudo DEBIAN_FRONTEND=noninteractive apt-get install --fix-missing -y \
+            graphviz \
+            pandoc \
+            fontconfig \
+            fonts-freefont-ttf
+          # 验证安装
+          if ! command -v graphviz &> /dev/null || ! command -v pandoc &> /dev/null; then
+            echo "错误: 系统依赖安装失败" >&2
+            exit 1
+          fi
       
       # 安装项目依赖
       - name: 安装项目依赖
