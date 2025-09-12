@@ -10,9 +10,10 @@ inherit = "sphinx_book_theme"
 # HTML 元素及其类的结构目前并不是定义良好的公共 API。
 # 请通过检查生成的 HTML 页面来推断它们。虽然无法保证完全的稳定性，但它们通常是比较稳定的。
 stylesheets = [
-    "styles/sphinx-book-theme.css", # 继承 sphinx_book_theme 主题的样式表
-    "css/tippy.css",
     "css/custom.css",
+    "css/tippy.css",
+    "css/try_examples.css",
+    "styles/sphinx-book-theme.css", # 继承 sphinx_book_theme 主题的样式表
 ]
 
 # 侧边栏模板的列表。用户可以通过 `html_sidebars` 配置值来覆盖此设置。

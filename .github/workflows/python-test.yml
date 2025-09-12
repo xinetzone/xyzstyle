@@ -57,16 +57,6 @@ jobs:
           # 安装项目本身及其依赖
           pip install -e .
 
-      # 创建测试目录（如果不存在）
-      - name: 创建测试目录
-        run: |
-          if [ ! -d "tests" ]; then
-            mkdir tests
-            touch tests/__init__.py
-            echo "import unittest\n\nclass TestExample(unittest.TestCase):\n    def test_basic(self):\n        self.assertTrue(True)\n\nif __name__ == '__main__':\n    unittest.main()" > tests/test_basic.py
-            echo "测试目录和基础测试文件已创建"
-          fi
-
       # 运行测试并生成覆盖率报告
       - name: 运行测试
         run: |
