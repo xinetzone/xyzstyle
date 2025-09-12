@@ -260,6 +260,12 @@ class ConfigManager:
             if sphinx_key == "release" and section == "project" and toml_key == "version":
                 config[sphinx_key] = source_data.get(toml_key, default_value)
         
+        # 处理content_footer_items配置，将其添加到html_theme_options字典中
+        if "content_footer_items" in self._data:
+            if "html_theme_options" not in config:
+                config["html_theme_options"] = {}
+            config["html_theme_options"]["content_footer_items"] = self._data["content_footer_items"]
+        
         # 验证配置类型
         self._validate_config(config)
         
@@ -294,10 +300,10 @@ class ConfigManager:
     def _set_config_path(self) -> None:
         """设置配置文件路径。
         
-        此方法基于Sphinx应用的源码目录确定doc.toml配置文件的路径。
+        此方法基于Sphinx应用的源码目录确定default.toml配置文件的路径。
         """
         src_dir = Path(self.app.srcdir)
-        self.config_path = src_dir / "doc.toml"
+        self.config_path = src_dir / "default.toml"
     
     def _load_toml_config(self) -> Dict[str, Any]:
         """加载并验证TOML配置。
