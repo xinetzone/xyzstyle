@@ -1,14 +1,45 @@
 # XYZStyle Theme for Sphinx
 
-XYZStyle 是一个基于 sphinx-book-theme 的现代化 Sphinx 文档主题，提供了优雅的 UI 设计和丰富的自定义选项。
+XYZStyle 是一个基于 sphinx_book_theme 的 Sphinx 文档主题扩展，提供了优雅的 UI 设计、配置管理和丰富的自定义选项。
 
 ## 主要特点
 
-- **现代化界面**：基于 sphinx-book-theme 的优雅设计
-- **响应式支持**：完美适配桌面和移动设备
-- **丰富的自定义选项**：包括页面布局、样式、内容等多个方面的自定义能力
-- **高度可扩展性**：支持额外的 CSS、JavaScript 和自定义内容块
-- **主题继承优化**：保留 sphinx-book-theme 的优点，同时添加特有的增强功能
+- **主题继承**：完美继承并扩展 sphinx_book_theme 的功能
+- **配置管理**：支持通过 TOML 文件加载和管理配置
+- **事件集成**：与 Sphinx 的配置初始化事件无缝集成
+- **样式定制**：提供自定义 CSS 文件和主题选项
+- **响应式设计**：适配桌面和移动设备的响应式布局
+
+## 项目结构
+
+```
+src/xyzstyle/
+├── __init__.py          # Sphinx 扩展入口点
+├── set_theme.py         # 主题管理类
+├── config/              # 配置管理模块
+│   ├── __init__.py      # 配置模块导出
+│   └── manager.py       # 配置管理器实现
+└── theme/xyzstyle/      # 主题资源文件
+    ├── theme.toml       # 主题配置
+    ├── layout.html      # 主题布局模板
+    └── static/          # 静态资源文件
+        ├── css/         # CSS 样式文件
+        └── js/          # JavaScript 文件
+```
+
+## 核心功能
+
+### 1. 主题注册与初始化
+
+XYZStyleTheme 类负责查找主题目录、注册主题到 Sphinx 应用，并连接配置初始化事件。通过 `__post_init__` 方法，确保主题目录存在并成功注册。
+
+### 2. 配置管理
+
+ConfigManager 类提供了配置加载和更新功能，支持从 TOML 文件加载配置，并将配置应用到 Sphinx 应用实例中。它包含配置验证、类型检查和增量更新机制。
+
+### 3. Sphinx 扩展集成
+
+通过 `setup` 函数，XYZStyle 主题被注册为 Sphinx 扩展，支持并行处理，并提供完整的主题功能。
 
 ## 安装
 
@@ -20,8 +51,9 @@ pip install xyzstyle
 
 ## 依赖
 
-- sphinx-book-theme>=0.4.0
-- Python>=3.12
+- sphinx_book_theme (主题继承)
+- Sphinx (文档生成引擎)
+- Python 3.12+ (运行环境)
 
 ## 使用方法
 
@@ -31,64 +63,53 @@ pip install xyzstyle
 # 设置主题
 html_theme = 'xyzstyle'
 
-# 添加主题路径（如果需要）
+# 导入主题模块
 import xyzstyle
-html_theme_path = [xyzstyle.get_html_theme_path()]
 
 # 主题配置选项
 html_theme_options = {
-    # sphinx-book-theme 原始选项
     "use_download_button": "True",
     "use_fullscreen_button": "True",
     "use_repository_button": "True",
     "repository_url": "https://github.com/yourusername/yourproject",
     "path_to_docs": "doc",
-    
-    # XYZStyle 特有选项
-    "xyzstyle_header_announcement": "欢迎访问我的文档网站！",  # 页面顶部的公告内容
-    "xyzstyle_footer_content": "© 2023 版权所有",  # 页脚的自定义内容
-    "xyzstyle_sidebar_footer": "联系我们: support@example.com",  # 侧边栏底部的自定义内容
-    "xyzstyle_article_header_content": "<p>本文档最后更新于 2023-01-01</p>",  # 文章头部的自定义内容
-    "xyzstyle_article_footer_content": "<p>感谢您阅读本文档</p>",  # 文章底部的自定义内容
-    "xyzstyle_after_content": "<div class='related-articles'><h3>相关文章</h3><ul><li><a href='#'>文章1</a></li><li><a href='#'>文章2</a></li></ul></div>",  # 内容区域之后的自定义内容
-    "xyzstyle_enable_top_toc": "True",  # 是否在文章顶部显示目录
-    "xyzstyle_extra_meta": "<meta name='description' content='我的项目文档'>",  # 额外的 HTML meta 标签
-    "xyzstyle_extra_css": ["_static/custom_extra.css"],  # 额外的 CSS 文件路径列表
-    "xyzstyle_extra_js": ["_static/custom_extra.js"],  # 额外的 JavaScript 文件路径列表
-    "xyzstyle_inline_js": "console.log('XYZStyle theme loaded successfully!');"  # 内联 JavaScript 代码
+    # 其他 sphinx_book_theme 支持的选项
 }
 ```
 
-## 自定义功能
+## 主题配置选项
 
-XYZStyle 主题提供了多种自定义功能，让你可以根据自己的需求定制文档的外观和行为：
+XYZStyle 主题支持以下核心配置选项（在 theme.toml 中定义）：
 
-### 1. 自定义内容块
+| 选项 | 描述 | 默认值 |
+|------|------|--------|
+| announcement | 页面顶部公告内容 | "" |
+| use_download_button | 是否显示下载按钮 | "True" |
+| use_fullscreen_button | 是否显示全屏按钮 | "True" |
+| use_repository_button | 是否显示仓库按钮 | "False" |
+| repository_url | 项目仓库URL | "" |
+| path_to_docs | 文档路径 | "doc" |
+| pygments_style | 代码高亮样式 | { default = "perldoc" } |
+| footer_content_items | 页脚内容项 | "author.html, copyright.html, last-updated.html, extra-footer.html" |
 
-可以在文档的不同位置添加自定义内容，包括：
-- 页面顶部公告 (`xyzstyle_header_announcement`)
-- 页脚自定义内容 (`xyzstyle_footer_content`)
-- 侧边栏底部内容 (`xyzstyle_sidebar_footer`)
-- 文章头部内容 (`xyzstyle_article_header_content`)
-- 文章底部内容 (`xyzstyle_article_footer_content`)
-- 内容区域之后内容 (`xyzstyle_after_content`)
+## 配置文件加载
 
-### 2. 资源扩展
+XYZStyle 支持通过在 Sphinx 项目源码目录中的 default.toml 文件加载配置。配置管理器会自动映射 TOML 配置到 Sphinx 配置项。
 
-可以添加额外的 CSS 和 JavaScript 文件，或者直接添加内联 JavaScript 代码：
-- 额外的 CSS 文件 (`xyzstyle_extra_css`)
-- 额外的 JavaScript 文件 (`xyzstyle_extra_js`)
-- 内联 JavaScript 代码 (`xyzstyle_inline_js`)
+## 自定义样式
 
-### 3. 布局控制
+主题包含以下自定义 CSS 文件：
+- custom.css
+- tippy.css
+- try_examples.css
+- sphinx-book-theme.css (继承自基础主题)
 
-可以控制文档的布局，例如：
-- 在文章顶部显示目录 (`xyzstyle_enable_top_toc`)
-- 添加额外的 HTML meta 标签 (`xyzstyle_extra_meta`)
+## 扩展与开发
 
-## 贡献
-
-欢迎对 XYZStyle 主题进行贡献！如果你有任何建议或问题，请在 GitHub 上提交 issue 或 pull request。
+如果你想扩展或修改 XYZStyle 主题，可以：
+1. 修改主题目录下的静态资源文件
+2. 扩展 ConfigManager 类以支持更多配置选项
+3. 在 layout.html 中添加自定义模板覆盖
 
 ## 许可证
 
