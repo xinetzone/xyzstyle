@@ -59,7 +59,3 @@ build-backend = "pdm.backend"
 
 [tool.pdm]
 distribution = true
-
-[tool.pdm.version]
-# 使用语义化版本号生成规则
-# 可通过 pdm version 命令更新版本号
