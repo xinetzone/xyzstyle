@@ -1,0 +1,103 @@
+# GitHub Pages 部署工作流
+# 自动构建文档并部署到 GitHub Pages
+name: 部署文档到 GitHub Pages
+
+on:
+  # 在推送到默认分支时运行
+  push:
+    branches: ["main"]
+    # 只在文档相关文件变更时触发
+    paths:
+      - 'doc/**'
+      - 'src/**'
+      - 'pyproject.toml'
+      - '.github/workflows/pages.yml'
+
+  # 允许从 Actions 选项卡手动运行此工作流
+  workflow_dispatch:
+
+# 设置 GITHUB_TOKEN 的权限以允许部署到 GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# 允许一个并发部署
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  # 构建和部署作业
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      # 增强运行器安全性
+      - name: 增强运行器安全性
+        uses: step-security/harden-runner@v2
+        with:
+          egress-policy: block
+          allowed-endpoints: >
+            pypi.org:443
+            files.pythonhosted.org:443
+            github.com:443
+            api.github.com:443
+      
+      # 检出代码库
+      - name: 检出代码
+        uses: actions/checkout@v4
+      
+      # 设置 Python 环境
+      - name: 🐍 设置 Python 环境
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: "pip"
+          cache-dependency-path: "pyproject.toml"
+      
+      # 安装系统依赖
+      # graphviz: 用于生成图表
+      # pandoc: 用于文档格式转换
+      - name: 安装依赖并重试
+        run: |
+          for i in {1..3}; do
+            sudo apt-get update && \
+            sudo apt-get install -y --fix-missing pandoc graphviz fonts-freefont-ttf && break
+            sleep 10
+          done
+      
+      # 安装项目依赖
+      - name: 安装项目依赖
+        run: |
+          python -m pip install --upgrade pip
+          pip install .[doc,dev]
+      
+      # 构建 HTML 文档
+      - name: 🔧 构建 HTML 文档
+        run: invoke doc
+      
+      # 验证构建结果
+      - name: 验证构建结果
+        run: |
+          if [ ! -f "doc/_build/html/index.html" ]; then
+            echo "构建失败：index.html 未生成"
+            exit 1
+          fi
+      
+      # 配置 Pages
+      - name: 配置 Pages
+        uses: actions/configure-pages@v4
+      
+      # 上传构建产物
+      - name: 上传构建产物
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: 'doc/_build/html/'
+      
+      # 部署到 GitHub Pages
+      - name: 🚀 部署到 GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
