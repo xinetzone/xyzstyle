@@ -68,44 +68,7 @@ pip install xyzstyle
 - Sphinx (文档生成引擎)
 - Python 3.12+ (运行环境)
 
-## 使用方法
-
-在你的 Sphinx 项目的 `conf.py` 文件中，添加以下配置：
-
-```python
-# 设置主题
-html_theme = 'xyzstyle'
-
-# 导入主题模块
-import xyzstyle
-
-# 主题配置选项
-html_theme_options = {
-    "use_download_button": "True",
-    "use_fullscreen_button": "True",
-    "use_repository_button": "True",
-    "repository_url": "https://github.com/yourusername/yourproject",
-    "path_to_docs": "doc",
-    # 其他 sphinx_book_theme 支持的选项
-}
-```
-
-## 主题配置选项
-
-XYZStyle 主题支持以下核心配置选项（在 theme.toml 中定义）：
-
-| 选项 | 描述 | 默认值 |
-|------|------|--------|
-| announcement | 页面顶部公告内容 | "" |
-| use_download_button | 是否显示下载按钮 | "True" |
-| use_fullscreen_button | 是否显示全屏按钮 | "True" |
-| use_repository_button | 是否显示仓库按钮 | "False" |
-| repository_url | 项目仓库URL | "" |
-| path_to_docs | 文档路径 | "doc" |
-| pygments_style | 代码高亮样式 | { default = "perldoc" } |
-| footer_content_items | 页脚内容项 | "author.html, copyright.html, last-updated.html, extra-footer.html" |
-
 ## 配置文件加载
 
-XYZStyle 支持通过在 Sphinx 项目源码目录中的 default.toml 文件加载配置。配置管理器会自动映射 TOML 配置到 Sphinx 配置项。
+XYZStyle 支持通过在 Sphinx 项目源码目录中的 `default.toml` 文件加载 `html_theme_options` 等配置。
 
