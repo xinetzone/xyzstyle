@@ -1,10 +1,10 @@
 # 主题选项配置
 [html_theme_options]
 # 公告栏设置
-announcement = "欢迎使用 xyzstyle 主题！它是基于 sphinx-book-theme 的现代文档主题。"
+announcement = "欢迎使用 mystx 主题！它是基于 sphinx-book-theme 的现代文档主题。"
 
 # 仓库相关设置
-repository_url = "https://github.com/xinetzone/xyzstyle"  # 仓库地址
+repository_url = "https://github.com/xinetzone/mystx"  # 仓库地址
 repository_branch = "main"  # 仓库分支
 use_repository_button = true  # 显示 "在 GitHub 上查看" 按钮
 use_source_button = true  # 显示 "查看源代码" 按钮

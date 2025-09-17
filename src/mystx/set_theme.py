@@ -85,7 +85,7 @@ def config_inited_handler(app: Sphinx, config: Config) -> None:
         app: Sphinx应用实例
         config: Sphinx配置对象
     """
-    logger.info("初始化xyzstyle配置系统")
+    logger.info("初始化mystx配置系统")
     try:
         config_manager = ConfigManager(app=app, config=config)
         config_manager.apply_config()
@@ -95,18 +95,18 @@ def config_inited_handler(app: Sphinx, config: Config) -> None:
 
 
 @dataclass
-class XYZStyleTheme:
-    """XYZStyle主题管理类，负责整合主题信息管理和配置功能。
+class MySTX:
+    """mystx主题管理类，负责整合主题信息管理和配置功能。
     
     该类负责查找主题目录、注册主题到Sphinx应用，并设置配置加载器事件处理函数。
     
     Attributes:
         app: Sphinx应用实例，用于注册主题和连接事件。
-        name: 主题名称，默认为"xyzstyle"。
+        name: 主题名称，默认为"mystx"。
         theme_dir: 主题目录路径，初始化后自动设置。
     """
     app: Sphinx
-    name: str = "xyzstyle"
+    name: str = "mystx"
     theme_dir: Optional[str] = field(init=False)
     
     def __post_init__(self) -> None:

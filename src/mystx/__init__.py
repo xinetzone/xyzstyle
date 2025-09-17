@@ -5,11 +5,11 @@ The theme includes configuration management, styling, and integration with Sphin
 
 Attributes:
     setup: The entry point function for the Sphinx extension.
-    XYZStyleTheme: The main theme management class.
+    MySTX: The main theme management class.
 """
 from sphinx.application import Sphinx
 from sphinx.util.typing import ExtensionMetadata
-from .set_theme import XYZStyleTheme
+from .set_theme import MySTX
 
 
 def setup(app: Sphinx) -> ExtensionMetadata:
@@ -27,7 +27,7 @@ def setup(app: Sphinx) -> ExtensionMetadata:
             processing compatibility.
     """
     # Initialize and register the theme with the Sphinx application
-    XYZStyleTheme(app)
+    MySTX(app)
     
     # Return metadata indicating that the theme is safe for parallel processing
     return {

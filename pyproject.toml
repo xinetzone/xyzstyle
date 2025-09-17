@@ -1,7 +1,7 @@
 [project]
-name = "xyzstyle"
-version = "0.2.0"
-description = "xyzstyle 主题 - 基于 sphinx-book-theme 的现代 Sphinx 文档主题"
+name = "mystx"
+version = "0.2.1"
+description = "mystx 主题 - 基于 sphinx-book-theme 的现代 Sphinx 文档主题"
 authors = [
     {name = "xinetzone", email = "735613050@qq.com"},
 ]
@@ -12,20 +12,20 @@ maintainers = [
   {name = "xinetzone", email = "735613050@qq.com"},
 ]
 dependencies = [
-    "sphinx-book-theme",
+    "sphinx-book-theme>=1.1.4",
+    "sphinx>=8.0.0",
 ]
 
 [project.urls]
-Repository = "https://github.com/xinetzone/xyzstyle"
-Documentation = "https://xyzstyle.readthedocs.io/"
-Issues = "https://github.com/xinetzone/xyzstyle/issues"
+Repository = "https://github.com/xinetzone/mystx"
+Documentation = "https://mystx.readthedocs.io/"
+Issues = "https://github.com/xinetzone/mystx/issues"
 
 [project.entry-points."sphinx.html_themes"]
-xyzstyle = "xyzstyle"
+mystx = "mystx"
 
 [project.optional-dependencies]
 doc = [
-    "sphinx>=8.0.0",
     "ablog",
     "ipywidgets",
     "numpy",
