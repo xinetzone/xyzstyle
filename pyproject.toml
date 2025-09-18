@@ -1,0 +1,63 @@
+[project]
+name = "mystx"
+version = "0.2.1"
+description = "mystx 主题 - 基于 sphinx-book-theme 的现代 Sphinx 文档主题"
+authors = [
+    {name = "xinetzone", email = "735613050@qq.com"},
+]
+requires-python = ">=3.12"
+readme = "README.md"
+license = {file = "LICENSE"}
+maintainers = [
+  {name = "xinetzone", email = "735613050@qq.com"},
+]
+dependencies = [
+    "sphinx-book-theme>=1.1.4",
+    "sphinx>=8.0.0",
+    "myst-nb",
+    "myst-parser",
+]
+
+[project.urls]
+Repository = "https://github.com/xinetzone/mystx"
+Documentation = "https://mystx.readthedocs.io/"
+Issues = "https://github.com/xinetzone/mystx/issues"
+
+[project.entry-points."sphinx.html_themes"]
+mystx = "mystx"
+
+[project.optional-dependencies]
+doc = [
+    "ablog",
+    "ipywidgets",
+    "numpy",
+    "matplotlib",
+    "sphinx-comments",
+    "myst-nb",
+    "nbclient",
+    "pandas",
+    "plotly",
+    "sphinx-design",
+    "sphinx-examples",
+    "sphinx-copybutton",
+    "sphinx-contributors",
+    "sphinx-thebe",
+    "sphinxcontrib-bibtex",
+    "sphinxext-opengraph",
+    "sphinx-sitemap",
+    "sphinx-autoapi>=3.4",
+    "graphviz",
+    "sphinx-tippy",
+]
+
+dev = [
+    "invoke",
+    "taolib",
+]
+
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
+[tool.pdm]
+distribution = true
