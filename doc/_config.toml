@@ -25,7 +25,7 @@ use_download_button = true  # 使用下载按钮
 use_fullscreen_button = true  # 使用全屏按钮
 
 # 页脚设置
-footer_content_items = "author.html, copyright.html, last-updated.html, extra-footer.html"  # 页脚内容
+footer_content_items = "author.html, copyright.html, last-updated.html, extra-footer.html" # 页脚内容
 # extra_footer = "额外的页脚信息"  # 额外的页脚内容
 # 图标链接配置
 icon_links = [
