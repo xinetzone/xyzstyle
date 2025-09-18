@@ -28,6 +28,7 @@ mystx = "mystx"
 
 [project.optional-dependencies]
 doc = [
+    "taolib",
     "ablog",
     "ipywidgets",
     "numpy",
@@ -52,7 +53,6 @@ doc = [
 
 dev = [
     "invoke",
-    "taolib",
 ]
 
 [build-system]
