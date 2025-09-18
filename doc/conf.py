@@ -1,7 +1,5 @@
-# -*- coding: utf-8 -*-
-project = "mystx 文档"
-description = "mystx 主题的使用文档"
-author = "xinetzone"
+project = "mystx 文档" # 文档项目名称
+author = "xinetzone" # 文档作者
 # == 国际化与本地化设置 ==================================================================
 language = 'zh_CN' # 文档语言（中文简体）
 locale_dirs = ['../locales/'] # 翻译文件存放目录
@@ -17,7 +15,7 @@ exclude_patterns = [
 ]
 static_path = ["_static"]  # 静态资源目录，用于存放CSS、JavaScript、图片等
 html_theme = 'mystx'  # 使用的主题名称
-html_logo = "_static/images/logo.jpg"
-html_title = "Sphinx mystx Theme"
-html_copy_source = True
-html_favicon = "_static/images/favicon.jpg"
+html_logo = "_static/images/logo.jpg" # 文档logo
+html_title = "Sphinx mystx Theme" # 文档标题
+html_copy_source = True # 是否在文档中包含源文件链接
+html_favicon = "_static/images/favicon.jpg" # 文档favicon

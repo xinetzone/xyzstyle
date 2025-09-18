@@ -12,7 +12,7 @@ logger = logging.getLogger(__name__)
 class ConfigManager:
     """配置管理器，负责处理主题相关的配置加载和应用。
     
-    该类提供了从TOML文件加载配置、合并默认配置与用户配置
+    该类提供了从TOML文件加载配置、合并自定义与用户配置
     以及应用配置到Sphinx实例的功能。
     """
     
@@ -28,24 +28,24 @@ class ConfigManager:
         self.logger = logging.getLogger(f"{__name__}.ConfigManager")
         
     def load_default_config(self) -> Optional[Dict[str, Any]]:
-        """加载默认配置文件。
+        """加载自定义文件。
         
         Returns:
             配置字典，如果文件不存在则返回None
         """
-        default_toml = Path(self.app.srcdir) / "default.toml"
+        default_toml = Path(self.app.srcdir) / "_config.toml"
         if default_toml.exists():
-            self.logger.info(f"找到默认配置文件 {default_toml}")
+            self.logger.info(f"找到自定义文件 {default_toml}")
         else:
             return
         
         try:
             with open(default_toml, "rb") as f:
                 default_config = tomllib.load(f)
-                self.logger.info(f"成功加载默认配置文件 {default_toml}")
+                self.logger.info(f"成功加载自定义文件 {default_toml}")
                 return default_config
         except Exception as e:
-            self.logger.error(f"加载默认配置文件时出错: {e}")
+            self.logger.error(f"加载自定义文件时出错: {e}")
             raise
     
     def apply_config(self) -> None:
@@ -61,11 +61,11 @@ class ConfigManager:
             if not hasattr(self.config, "html_theme_options"):
                 self.config.html_theme_options = {}
             
-            # 合并默认配置到html_theme_options
+            # 合并自定义到html_theme_options
             for key, value in default_config["html_theme_options"].items():
                 if key not in self.config.html_theme_options:
                     self.config.html_theme_options[key] = value
-                    self.logger.debug(f"应用默认配置: {key} = {value}")
+                    self.logger.debug(f"应用自定义: {key} = {value}")
             
             self.logger.info(f"已成功更新html_theme_options配置")
 
