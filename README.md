@@ -121,7 +121,7 @@ mystx 主题支持通过两种方式配置主题选项：
 html_theme_options = {
     # 仓库相关配置
     "repository_url": "https://github.com/yourusername/yourproject",  # 项目仓库地址
-    "use_repository_button": True,  # 是否显示仓库按钮
+    "use_repository_button": True,  # 在页眉显示指向存储库的小 GitHub 徽标
     "use_issues_button": True,  # 是否显示问题反馈按钮
     "use_edit_page_button": True,  # 是否显示编辑页面按钮
     "path_to_docs": "doc/",  # 文档目录（相对于项目根目录）
