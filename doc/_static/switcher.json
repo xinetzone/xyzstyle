@@ -2,11 +2,11 @@
   {
     "name": "main",
     "version": "main",
-    "url": "https://xinetzone.github.io/xyzstyle/"
+    "url": "https://xinetzone.github.io/mystx/"
   },
   {
     "name": "rtd",
     "version": "latest",
-    "url": "https://xyzstyle.readthedocs.io/zh-cn/latest/"
+    "url": "https://mystx.readthedocs.io/zh-cn/latest/"
   }
 ]

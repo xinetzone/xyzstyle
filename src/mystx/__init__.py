@@ -1,11 +1,7 @@
-"""xyzstyle - A Sphinx theme for documentation.
+"""mystx - 基于 sphinx-book-theme 的现代 Sphinx 文档主题
 
 This module provides a custom Sphinx theme for creating beautiful, modern documentation.
 The theme includes configuration management, styling, and integration with Sphinx.
-
-Attributes:
-    setup: The entry point function for the Sphinx extension.
-    MySTX: The main theme management class.
 """
 from sphinx.application import Sphinx
 from sphinx.util.typing import ExtensionMetadata

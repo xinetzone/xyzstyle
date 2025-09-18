@@ -14,6 +14,7 @@ from sphinx.application import Sphinx
 from sphinx.util import logging
 from sphinx.config import Config
 from sphinx.errors import ExtensionError
+from .version_switcher import sphinx_setup as version_switcher_setup
 
 # 获取Sphinx日志记录器
 logger = logging.getLogger(__name__)
@@ -149,14 +150,21 @@ def config_inited_handler(app: Sphinx, config: Config) -> None:
         # 设置Thebe功能开关
         app.add_config_value("use_thebe", False, "html")  # 默认禁用
         use_thebe = getattr(config, "use_thebe", False)  # 默认禁用
-        
         if use_thebe:
             # 配置Thebe功能
             thebe_setup(app, config)
             event_logger.debug("Thebe功能已开启")
         else:
             event_logger.debug("Thebe功能已禁用")
-            
+        
+        # 设置版本切换器
+        app.add_config_value("version_switcher", False, "html")  # 默认禁用
+        version_switcher = getattr(config, "version_switcher", False)  # 默认禁用
+        if version_switcher:
+            version_switcher_setup(app, config)
+            event_logger.debug("版本切换器已配置")
+        else:
+            event_logger.debug("版本切换器已禁用")
     except Exception as e:
         event_logger.error(f"配置系统初始化失败: {e}")
         raise

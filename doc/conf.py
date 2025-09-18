@@ -5,11 +5,11 @@ Sphinx 文档配置文件
 
 该文件包含了 mystx 文档的所有配置项，包括项目信息、国际化设置、扩展插件、主题配置等。
 """
-
+from taolib import get_version  # 引入获取版本号的函数
 # ================================= 项目基本信息 =================================
-project = "mystx 文档"  # 文档项目名称
+project = "mystx"  # 文档项目名称
 author = "xinetzone"    # 文档作者
-
+release = get_version("mystx")  # 获取mystx主题的版本号
 # ================================= 国际化与本地化设置 ==============================
 language = 'zh_CN'       # 文档语言（中文简体）
 locale_dirs = ['../locales/']  # 翻译文件存放目录
@@ -39,7 +39,7 @@ html_logo = "_static/images/logo.jpg"  # 文档logo
 html_favicon = "_static/images/favicon.jpg"  # 文档favicon
 html_copy_source = True  # 是否在文档中包含源文件链接
 
-# thebe 交互式功能配置
+# ================================= thebe 交互式功能配置 =================================
 # use_thebe = True  # 是否开启Thebe功能（默认关闭）
 # thebe_config = {
 #     "repository_url": f"https://github.com/xinetzone/{project}",
@@ -51,3 +51,6 @@ html_copy_source = True  # 是否在文档中包含源文件链接
 #     # "codemirror-theme": "blackboard",  # Doesn't currently work
 #     # "always_load": True,  # To load thebe on every page
 # }
+
+# ================================= 版本切换器配置 =================================
+version_switcher = True  # 是否开启版本切换器（默认关闭）
