@@ -1,5 +1,6 @@
-# mystx
+# MySTX
 
+![repo size](https://img.shields.io/github/repo-size/xinetzone/mystx.svg)
 [![PyPI][pypi-badge]][pypi-link]
 [![GitHub issues][issue-badge]][issue-link]
 [![GitHub forks][fork-badge]][fork-link]
