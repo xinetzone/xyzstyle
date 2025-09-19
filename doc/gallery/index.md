@@ -1,4 +1,4 @@
-# 插件库
+# 文档库
 
 ```{toctree}
 :hidden:
