@@ -4,6 +4,7 @@
 :hidden:
 
 readme
+gallery/index
 test
 ```
 
