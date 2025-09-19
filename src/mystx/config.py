@@ -158,9 +158,9 @@ def config_inited_handler(app: Sphinx, config: Config) -> None:
             event_logger.debug("Thebe功能已禁用")
         
         # 设置版本切换器
-        app.add_config_value("version_switcher", False, "html")  # 默认禁用
-        version_switcher = getattr(config, "version_switcher", False)  # 默认禁用
-        if version_switcher:
+        app.add_config_value("version_switcher_json_url", "", "html")  # 默认禁用
+        version_switcher_json_url = getattr(config, "version_switcher_json_url", "")  # 默认禁用
+        if version_switcher_json_url:
             version_switcher_setup(app, config)
             event_logger.debug("版本切换器已配置")
         else:

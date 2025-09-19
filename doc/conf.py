@@ -5,6 +5,7 @@ Sphinx 文档配置文件
 
 该文件包含了 mystx 文档的所有配置项，包括项目信息、国际化设置、扩展插件、主题配置等。
 """
+import os
 from taolib import get_version  # 引入获取版本号的函数
 # ================================= 项目基本信息 =================================
 project = "mystx"  # 文档项目名称
@@ -53,4 +54,14 @@ html_copy_source = True  # 是否在文档中包含源文件链接
 # }
 
 # ================================= 版本切换器配置 =================================
-version_switcher = True  # 是否开启版本切换器（默认关闭）
+version_switcher_json_url = "https://mystx.readthedocs.io/zh-cn/latest/_static/switcher.json"
+# ReadTheDocs has its own way of generating sitemaps, etc.
+sitemap_url_scheme = "{lang}{version}{link}"
+if not os.environ.get("READTHEDOCS"):
+    extensions += ["sphinx_sitemap"]
+    html_baseurl = os.environ.get("SITEMAP_URL_BASE", "http://127.0.0.1:8000/")
+    sitemap_url_scheme = "{link}"
+elif os.environ.get("GITHUB_ACTIONS"):
+    html_baseurl = os.environ.get("SITEMAP_URL_BASE", "https://xinetzone.github.io/")
+
+sitemap_locales = [None]  # 语言列表
