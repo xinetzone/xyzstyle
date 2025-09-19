@@ -17,7 +17,7 @@ def sphinx_setup(app: Sphinx, config: Config) -> ExtensionMetadata:
         # For local development, infer the version from the package
         if any(marker in release for marker in ("dev", "rc")):
             version_match = "dev"
-            json_url = str(Path(app.outdir)/"_static/switcher.json")
+            json_url = "_static/switcher.json" #str(Path(app.outdir)/"_static/switcher.json")
         else:
             version_match = f"v{release}"
     elif version_match == "stable":
